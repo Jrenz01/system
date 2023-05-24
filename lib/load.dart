@@ -1,4 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:system/aguinaldo.dart';
+import 'package:system/baguio.dart';
+import 'package:system/bangui.dart';
+import 'package:system/basco.dart';
+import 'package:system/biri.dart';
+import 'package:system/boracay.dart';
+import 'package:system/chocolatehills.dart';
+import 'package:system/corregidor.dart';
+import 'package:system/enchanted.dart';
+import 'package:system/fort.dart';
+import 'package:system/home.dart';
+import 'package:system/hundred.dart';
+import 'package:system/intramuros.dart';
+import 'package:system/luneta.dart';
+import 'package:system/mactan.dart';
+import 'package:system/magellan.dart';
+import 'package:system/malacanang.dart';
+import 'package:system/manila.dart';
+import 'package:system/mayon.dart';
+import 'package:system/banaue.dart';
+import 'package:system/quiapo.dart';
+import 'package:system/sagada.dart';
+import 'package:system/sampaloc.dart';
+import 'package:system/sanagustin.dart';
+import 'package:system/sanjuanico.dart';
+import 'package:system/taal.dart';
+import 'package:system/tagaytay.dart';
+import 'package:system/underground.dart';
+import 'package:system/vigan.dart';
 
 void main() => runApp(Load());
 
@@ -12,14 +41,8 @@ class Load extends StatelessWidget {
   }
 }
 
-class LevelListScreen extends StatefulWidget {
-  @override
-  _LevelListScreenState createState() => _LevelListScreenState();
-}
-
-class _LevelListScreenState extends State<LevelListScreen> {
-  List<int> levels = List.generate(25, (index) => index + 1);
-  List<int> completedLevels = []; // List to track completed levels
+class LevelListScreen extends StatelessWidget {
+  final List<int> levels = List.generate(30, (index) => index + 1);
 
   @override
   Widget build(BuildContext context) {
@@ -42,188 +65,153 @@ class _LevelListScreenState extends State<LevelListScreen> {
         itemCount: levels.length,
         itemBuilder: (BuildContext context, int index) {
           final int level = levels[index];
-          final bool isUnlocked = completedLevels.contains(level);
           return ListTile(
-            title: Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: isUnlocked ? Colors.green : Colors.red, // Border color based on level lock status
-                  width: 2.0,
-                ),
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: ListTile(
-                title: Text('Level $level'),
-                leading: Icon(
-                  isUnlocked ? Icons.lock_open : Icons.lock, // Lock icon based on level lock status
-                  color: isUnlocked ? Colors.green : Colors.red, // Icon color based on level lock status
-                ),
-              ),
-            ),
+            title: Text('Level $level'),
             onTap: () {
-              if (isUnlocked) {
-                navigateToLevel(level);
-              } else {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text('Level Locked'),
-                      content: Text('Complete previous levels to unlock this level.'),
-                      actions: [
-                        TextButton(
-                          child: Text('OK'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      ],
-                    );
-                  },
+              if (level == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Mayon()),
                 );
+              } else if (level == 2) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Banaue()),
+                );
+              } else if (level == 3) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Chocolatehills()),
+                );
+              } else if (level == 4) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Luneta()),
+                );
+              } else if (level == 5) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Intramuros()),
+                );
+              } else if (level == 6) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Vigan()),
+                );
+              } else if (level == 7) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Magellan()),
+                );
+              } else if (level == 8) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Baguio()),
+                );
+              } else if (level == 9) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Taal()),
+                );
+              } else if (level == 10) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Malacanang()),
+                );} else if (level == 11) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Hundred()),
+                );
+              } else if (level == 12) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Sanjuanico()),
+                );
+              } else if (level == 13) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Mactan()),
+                );
+              } else if (level == 14) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Aguinaldo()),
+                );
+              } else if (level == 15) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Boracay()),
+                );
+              } else if (level == 16) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Fort()),
+                );} else if (level == 17) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Manila()),
+                );
+              } else if (level == 18) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Sampaloc()),
+                );
+              } else if (level == 19) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Underground()),
+                );
+              } else if (level == 20) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Quiapo()),
+                );
+              } else if (level == 21) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Corregidor()),
+                );
+              } else if (level == 22) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Sanagustin()),
+                );
+              } else if (level == 23) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Tagaytay()),
+                );
+              } else if (level == 24) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Enchanted()),
+                );
+              } else if (level == 25) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Bangui()),
+                );
+              } else if (level == 26) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Sagada()),
+                );
+              } else if (level == 27) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Basco()),
+                );
+              } else if (level == 28) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Biri()),
+                );
+              } else {
+                // Handle other levels here
               }
             },
           );
         },
-      ),
-    );
-  }
-
-  void navigateToLevel(int level) {
-    switch (level) {
-      case 1:
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Mayon()),
-        ).then((_) {
-          // Level 1 completed, add it to the completed levels list
-          completeLevel(1);
-        });
-        break;
-      case 2:
-        if (completedLevels.contains(1)) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Banaue()),
-          ).then((_) {
-            // Level 2 completed, add it to the completed levels list
-            completeLevel(2);
-          });
-        } else {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text('Level Locked'),
-                content: Text('Complete previous levels to unlock this level.'),
-                actions: [
-                  TextButton(
-                    child: Text('OK'),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
-              );
-            },
-          );
-        }
-        break;
-      case 3:
-        if (completedLevels.contains(2)) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Chocolatehills()),
-          ).then((_) {
-            // Level 3 completed, add it to the completed levels list
-            completeLevel(3);
-          });
-        } else {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text('Level Locked'),
-                content: Text('Complete previous levels to unlock this level.'),
-                actions: [
-                  TextButton(
-                    child: Text('OK'),
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ],
-              );
-            },
-          );
-        }
-        break;
-    // Add more cases for other levels here
-    }
-  }
-
-  void completeLevel(int level) {
-    if (!completedLevels.contains(level)) {
-      setState(() {
-        completedLevels.add(level);
-      });
-    }
-  }
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: Center(
-        child: Text('Home Screen'),
-      ),
-    );
-  }
-}
-
-// Define the level classes (Mayon, Banaue, Chocolatehills, etc.) here
-// Replace them with your actual implementation
-class Mayon extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Mayon'),
-      ),
-      body: Center(
-        child: Text('Mayon Level'),
-      ),
-    );
-  }
-}
-
-class Banaue extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Banaue'),
-      ),
-      body: Center(
-        child: Text('Banaue Level'),
-      ),
-    );
-  }
-}
-
-class Chocolatehills extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Chocolate Hills'),
-      ),
-      body: Center(
-        child: Text('Chocolate Hills Level'),
       ),
     );
   }
