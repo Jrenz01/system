@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:system/home.dart';
+import 'package:system/level%2019/underground.dart';
 
-void main() => runApp(Biri());
+void main() => runApp(Sampaloc());
 
-class Biri extends StatefulWidget {
+class Sampaloc extends StatefulWidget {
   @override
-  _BiriState createState() => _BiriState();
+  _SampalocState createState() => _SampalocState();
 }
 
-class _BiriState extends State<Biri> {
+class _SampalocState extends State<Sampaloc> {
   final List<TextEditingController> controllers = List.generate(
-    10,
+    12,
         (_) => TextEditingController(),
   );
 
@@ -67,33 +68,35 @@ class _BiriState extends State<Biri> {
   }
 
   List<String> targetTexts = [
-    'B',
-    'I',
-    'R',
-    'I',
-    'I',
     'S',
+    'A',
+    'M',
+    'P',
+    'A',
+    'L',
+    'O',
+    'C',
     'L',
     'A',
-    'N',
-    'D'
+    'K',
+    'E'
   ];
   List<String> buttonLetters = [
-    'B',
+    'C',
     'U',
     'N',
     'A',
     'O',
     'R',
     'I',
-    'C',
+    'L',
     'E',
     'V',
     'P',
     'S',
-    'Y',
+    'K',
     'L',
-    'D'
+    'M'
   ];
 
   bool isSubmitClicked = false;
@@ -109,7 +112,7 @@ class _BiriState extends State<Biri> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 28',
+      title: 'Level 18',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -124,7 +127,7 @@ class _BiriState extends State<Biri> {
           centerTitle: true,
           title: Center(
             child: Text(
-              'Level 28',
+              'Level 18',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -143,7 +146,7 @@ class _BiriState extends State<Biri> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Hint',
+                            'Located in San Pablo City Laguna.',
                           ),
                           actions: [
                             ElevatedButton(
@@ -173,18 +176,18 @@ class _BiriState extends State<Biri> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/biri.JPG',
-                width: 380,
+                'assets/image/sampaloc.jpg',
+                width: 350,
                 height: 230,
               ),
             ),
-            SizedBox(height:15),
+            SizedBox(height: 15),
             Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 8; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -219,11 +222,11 @@ class _BiriState extends State<Biri> {
                       ),
                   ],
                 ),
-                SizedBox(height:1),
+                SizedBox(height: 1),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 4; i < 10; i++)
+                    for (int i = 8; i < 12; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -277,7 +280,8 @@ class _BiriState extends State<Biri> {
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.blue,
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                           ),
                           child: Text(
                             buttonLetters[i],
@@ -304,7 +308,8 @@ class _BiriState extends State<Biri> {
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.blue,
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                           ),
                           child: Text(
                             buttonLetters[i],
@@ -331,7 +336,8 @@ class _BiriState extends State<Biri> {
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.blue,
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                           ),
                           child: Text(
                             buttonLetters[i],
@@ -373,17 +379,13 @@ class _BiriState extends State<Biri> {
                           title: Text('WELL DONE!'),
                           content: Column(
                             children: [
-                              Image.asset('assets/image/biri.JPG'), // Replace 'assets/image/mayon.jpg' with the actual image path
+                              Image.asset('assets/image/sampaloc.jpg'), // Replace 'assets/image/mayon.jpg' with the actual image path
                               Text(
-                                '\nBiri, officially the Municipality of Biri, is a '
-                                    '5th class municipality in the province of '
-                                    'Northern Samar, Philippines. According to the '
-                                    '2020 census, it has a population of 11,274 people.'
-                                    'The archipelagic town is also known for its '
-                                    'inakob, a traditional Waray dish made by first '
-                                    'cooking grated root crops (gabi) with coconut '
-                                    'milk, condensed milk, eggs, brown sugar, and an '
-                                    'herb called anuv.',
+                                '\nSampaloc Lake, situated in San Pablo City, Laguna, Philippines'
+                                    'boasts both natural beauty and historical significance. '
+                                    'As the largest among the seven lakes in the city,'
+                                    'its name, derived from the Tagalog word for tamarind tree,  '
+                                    'reflects the abundance of these trees that once surrounded its shores..',
                               ),
                             ],
                           ),
@@ -403,7 +405,7 @@ class _BiriState extends State<Biri> {
                                 onPressed: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => Biri()),
+                                    MaterialPageRoute(builder: (context) => Underground()),
                                   );
                                 },
                                 style: ButtonStyle(
@@ -413,7 +415,8 @@ class _BiriState extends State<Biri> {
                                       width: 1.0,
                                     ),
                                   ),
-                                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                                  backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
                                   padding: MaterialStateProperty.all(EdgeInsets.all(10)),
                                 ),
                               ),
@@ -479,25 +482,16 @@ class _BiriState extends State<Biri> {
                 child: Text(
                   'Submit',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.pressed)) {
-                        return Colors.blue.withOpacity(0.5); // Change the color when the button is pressed
-                      }
-                      return Colors.blue; // Default color
-                    },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
                   ),
-                  padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 10,
-                    ),
-                  ),
+                  padding: EdgeInsets.all(10),
                 ),
               ),
             ),

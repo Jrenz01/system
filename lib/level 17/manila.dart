@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:system/home.dart';
+import 'package:system/level%2018/sampaloc.dart';
 
-void main() => runApp(Biri());
+void main() => runApp(Manila());
 
-class Biri extends StatefulWidget {
+class Manila extends StatefulWidget {
   @override
-  _BiriState createState() => _BiriState();
+  _ManilaState createState() => _ManilaState();
 }
 
-class _BiriState extends State<Biri> {
+class _ManilaState extends State<Manila> {
   final List<TextEditingController> controllers = List.generate(
-    10,
+    15,
         (_) => TextEditingController(),
   );
 
@@ -67,16 +67,21 @@ class _BiriState extends State<Biri> {
   }
 
   List<String> targetTexts = [
-    'B',
-    'I',
-    'R',
-    'I',
-    'I',
-    'S',
-    'L',
+    'M',
     'A',
     'N',
-    'D'
+    'I',
+    'L',
+    'A',
+    'O',
+    'C',
+    'E',
+    'A',
+    'N',
+    'P',
+    'A',
+    'R',
+    'K'
   ];
   List<String> buttonLetters = [
     'B',
@@ -91,9 +96,9 @@ class _BiriState extends State<Biri> {
     'V',
     'P',
     'S',
-    'Y',
+    'K',
     'L',
-    'D'
+    'M'
   ];
 
   bool isSubmitClicked = false;
@@ -109,22 +114,19 @@ class _BiriState extends State<Biri> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 28',
+      title: 'Level 17',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.keyboard_arrow_left),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
+              Navigator.pop(context);
             },
           ),
           centerTitle: true,
           title: Center(
             child: Text(
-              'Level 28',
+              'Level 17',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -143,7 +145,7 @@ class _BiriState extends State<Biri> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Hint',
+                            'Hint.',
                           ),
                           actions: [
                             ElevatedButton(
@@ -173,7 +175,7 @@ class _BiriState extends State<Biri> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/biri.JPG',
+                'assets/image/manila.jpeg',
                 width: 380,
                 height: 230,
               ),
@@ -184,9 +186,9 @@ class _BiriState extends State<Biri> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 6; i++)
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4),
+                        padding: EdgeInsets.symmetric(horizontal: 3),
                         child: GestureDetector(
                           onTap: () {
                             if (controllers[i].text.isNotEmpty) {
@@ -194,7 +196,7 @@ class _BiriState extends State<Biri> {
                             }
                           },
                           child: Container(
-                            width: 40,
+                            width: 37,
                             child: TextField(
                               controller: controllers[i],
                               enabled: false,
@@ -223,9 +225,9 @@ class _BiriState extends State<Biri> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 4; i < 10; i++)
+                    for (int i = 6; i < 15; i++)
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4),
+                        padding: EdgeInsets.symmetric(horizontal: 3),
                         child: GestureDetector(
                           onTap: () {
                             if (controllers[i].text.isNotEmpty) {
@@ -233,7 +235,7 @@ class _BiriState extends State<Biri> {
                             }
                           },
                           child: Container(
-                            width: 40,
+                            width: 37,
                             child: TextField(
                               controller: controllers[i],
                               enabled: false,
@@ -373,17 +375,14 @@ class _BiriState extends State<Biri> {
                           title: Text('WELL DONE!'),
                           content: Column(
                             children: [
-                              Image.asset('assets/image/biri.JPG'), // Replace 'assets/image/mayon.jpg' with the actual image path
+                              Image.asset('assets/image/manila.jpeg'), // Replace 'assets/image/mayon.jpg' with the actual image path
                               Text(
-                                '\nBiri, officially the Municipality of Biri, is a '
-                                    '5th class municipality in the province of '
-                                    'Northern Samar, Philippines. According to the '
-                                    '2020 census, it has a population of 11,274 people.'
-                                    'The archipelagic town is also known for its '
-                                    'inakob, a traditional Waray dish made by first '
-                                    'cooking grated root crops (gabi) with coconut '
-                                    'milk, condensed milk, eggs, brown sugar, and an '
-                                    'herb called anuv.',
+                                '\nThe Manila Ocean Park, also known as Ocean Park, '
+                                    'is an oceanarium in Manila, Philippines. '
+                                    'It is owned by China Oceanis Philippines Inc., '
+                                    'a subsidiary of China Oceanis Inc., a '
+                                    'Singaporean-registered firm. It is located '
+                                    'behind the Quirino Grandstand at Rizal Park.',
                               ),
                             ],
                           ),
@@ -403,7 +402,7 @@ class _BiriState extends State<Biri> {
                                 onPressed: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => Biri()),
+                                    MaterialPageRoute(builder: (context) => Sampaloc()),
                                   );
                                 },
                                 style: ButtonStyle(

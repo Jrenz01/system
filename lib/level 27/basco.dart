@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:system/biri.dart';
 import 'package:system/home.dart';
 
-void main() => runApp(Biri());
+void main() => runApp(Basco());
 
-class Biri extends StatefulWidget {
+class Basco extends StatefulWidget {
   @override
-  _BiriState createState() => _BiriState();
+  _BascoState createState() => _BascoState();
 }
 
-class _BiriState extends State<Biri> {
+class _BascoState extends State<Basco> {
   final List<TextEditingController> controllers = List.generate(
-    10,
+    15,
         (_) => TextEditingController(),
   );
 
@@ -68,32 +69,37 @@ class _BiriState extends State<Biri> {
 
   List<String> targetTexts = [
     'B',
-    'I',
-    'R',
-    'I',
-    'I',
-    'S',
-    'L',
     'A',
-    'N',
-    'D'
+    'S',
+    'C',
+    'O',
+    'L',
+    'I',
+    'G',
+    'H',
+    'T',
+    'H',
+    'O',
+    'U',
+    'S',
+    'E'
   ];
   List<String> buttonLetters = [
     'B',
     'U',
-    'N',
+    'H',
     'A',
     'O',
     'R',
     'I',
     'C',
     'E',
-    'V',
+    'T',
     'P',
     'S',
     'Y',
     'L',
-    'D'
+    'G'
   ];
 
   bool isSubmitClicked = false;
@@ -109,7 +115,7 @@ class _BiriState extends State<Biri> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 28',
+      title: 'Level 27',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -124,7 +130,7 @@ class _BiriState extends State<Biri> {
           centerTitle: true,
           title: Center(
             child: Text(
-              'Level 28',
+              'Level 27',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -143,7 +149,7 @@ class _BiriState extends State<Biri> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Hint',
+                            'Hint.',
                           ),
                           actions: [
                             ElevatedButton(
@@ -173,7 +179,7 @@ class _BiriState extends State<Biri> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/biri.JPG',
+                'assets/image/basco.jpeg',
                 width: 380,
                 height: 230,
               ),
@@ -184,9 +190,9 @@ class _BiriState extends State<Biri> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4),
+                        padding: EdgeInsets.symmetric(horizontal: 2),
                         child: GestureDetector(
                           onTap: () {
                             if (controllers[i].text.isNotEmpty) {
@@ -194,7 +200,7 @@ class _BiriState extends State<Biri> {
                             }
                           },
                           child: Container(
-                            width: 40,
+                            width: 37,
                             child: TextField(
                               controller: controllers[i],
                               enabled: false,
@@ -223,9 +229,9 @@ class _BiriState extends State<Biri> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 4; i < 10; i++)
+                    for (int i = 5; i < 15; i++)
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4),
+                        padding: EdgeInsets.symmetric(horizontal: 1),
                         child: GestureDetector(
                           onTap: () {
                             if (controllers[i].text.isNotEmpty) {
@@ -233,7 +239,7 @@ class _BiriState extends State<Biri> {
                             }
                           },
                           child: Container(
-                            width: 40,
+                            width: 37,
                             child: TextField(
                               controller: controllers[i],
                               enabled: false,
@@ -373,17 +379,16 @@ class _BiriState extends State<Biri> {
                           title: Text('WELL DONE!'),
                           content: Column(
                             children: [
-                              Image.asset('assets/image/biri.JPG'), // Replace 'assets/image/mayon.jpg' with the actual image path
+                              Image.asset('assets/image/basco.jpeg'), // Replace 'assets/image/mayon.jpg' with the actual image path
                               Text(
-                                '\nBiri, officially the Municipality of Biri, is a '
-                                    '5th class municipality in the province of '
-                                    'Northern Samar, Philippines. According to the '
-                                    '2020 census, it has a population of 11,274 people.'
-                                    'The archipelagic town is also known for its '
-                                    'inakob, a traditional Waray dish made by first '
-                                    'cooking grated root crops (gabi) with coconut '
-                                    'milk, condensed milk, eggs, brown sugar, and an '
-                                    'herb called anuv.',
+                                '\nBasco Lighthouse is a lighthouse in the '
+                                    'town of Basco in Batanes, the northernmost '
+                                    'province in the Philippines. Located in '
+                                    'Naidi Hills in Barangay San Antonio, the '
+                                    'lush green hills and the open sea provide a '
+                                    'beautiful backdrop for the lighthouse. The '
+                                    'place can easily be reached by a 1.2-km '
+                                    '(3/4 mile) hike from the Port of Basco.',
                               ),
                             ],
                           ),

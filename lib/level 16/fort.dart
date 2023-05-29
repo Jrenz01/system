@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:system/home.dart';
+import 'package:system/level%2017/manila.dart';
 
-void main() => runApp(Biri());
+void main() => runApp(Fort());
 
-class Biri extends StatefulWidget {
+class Fort extends StatefulWidget {
   @override
-  _BiriState createState() => _BiriState();
+  _FortState createState() => _FortState();
 }
 
-class _BiriState extends State<Biri> {
+class _FortState extends State<Fort> {
   final List<TextEditingController> controllers = List.generate(
-    10,
+    12,
         (_) => TextEditingController(),
   );
 
@@ -67,19 +68,21 @@ class _BiriState extends State<Biri> {
   }
 
   List<String> targetTexts = [
-    'B',
-    'I',
+    'F',
+    'O',
     'R',
-    'I',
-    'I',
+    'T',
     'S',
-    'L',
     'A',
     'N',
-    'D'
+    'T',
+    'I',
+    'A',
+    'G',
+    'O'
   ];
   List<String> buttonLetters = [
-    'B',
+    'T',
     'U',
     'N',
     'A',
@@ -91,9 +94,9 @@ class _BiriState extends State<Biri> {
     'V',
     'P',
     'S',
-    'Y',
+    'G',
     'L',
-    'D'
+    'F'
   ];
 
   bool isSubmitClicked = false;
@@ -109,7 +112,7 @@ class _BiriState extends State<Biri> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 28',
+      title: 'Level 16',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -124,7 +127,7 @@ class _BiriState extends State<Biri> {
           centerTitle: true,
           title: Center(
             child: Text(
-              'Level 28',
+              'Level 16',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -143,7 +146,7 @@ class _BiriState extends State<Biri> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Hint',
+                            'Hint.',
                           ),
                           actions: [
                             ElevatedButton(
@@ -173,7 +176,7 @@ class _BiriState extends State<Biri> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/biri.JPG',
+                'assets/image/fort.png',
                 width: 380,
                 height: 230,
               ),
@@ -223,7 +226,7 @@ class _BiriState extends State<Biri> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 4; i < 10; i++)
+                    for (int i = 4; i < 12; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -373,17 +376,13 @@ class _BiriState extends State<Biri> {
                           title: Text('WELL DONE!'),
                           content: Column(
                             children: [
-                              Image.asset('assets/image/biri.JPG'), // Replace 'assets/image/mayon.jpg' with the actual image path
+                              Image.asset('assets/image/fort.png'), // Replace 'assets/image/mayon.jpg' with the actual image path
                               Text(
-                                '\nBiri, officially the Municipality of Biri, is a '
-                                    '5th class municipality in the province of '
-                                    'Northern Samar, Philippines. According to the '
-                                    '2020 census, it has a population of 11,274 people.'
-                                    'The archipelagic town is also known for its '
-                                    'inakob, a traditional Waray dish made by first '
-                                    'cooking grated root crops (gabi) with coconut '
-                                    'milk, condensed milk, eggs, brown sugar, and an '
-                                    'herb called anuv.',
+                                '\nFort Santiago, built in 1571, is a citadel built by Spanish '
+                                    'navigator and governor Miguel López de Legazpi for the '
+                                    'newly established city of Manila in the Philippines. '
+                                    'The defense fortress is located in Intramuros, '
+                                    'the walled city of Manila.',
                               ),
                             ],
                           ),
@@ -403,7 +402,7 @@ class _BiriState extends State<Biri> {
                                 onPressed: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => Biri()),
+                                    MaterialPageRoute(builder: (context) => Manila()),
                                   );
                                 },
                                 style: ButtonStyle(

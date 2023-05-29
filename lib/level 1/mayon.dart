@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:system/home.dart';
+import 'package:system/level%202/banaue.dart';
 
-void main() => runApp(Biri());
+void main() => runApp(Mayon());
 
-class Biri extends StatefulWidget {
+class Mayon extends StatefulWidget {
   @override
-  _BiriState createState() => _BiriState();
+  _MayonState createState() => _MayonState();
 }
 
-class _BiriState extends State<Biri> {
+class _MayonState extends State<Mayon> {
   final List<TextEditingController> controllers = List.generate(
-    10,
-        (_) => TextEditingController(),
+    12,
+    (_) => TextEditingController(),
   );
 
   int currentTextBoxIndex = 0;
   int clearedTextBoxCount = 0;
 
   void updateCurrentTextBox(String text) {
-    if (currentTextBoxIndex < controllers.length && controllers[currentTextBoxIndex].text.isEmpty) {
+    if (currentTextBoxIndex < controllers.length &&
+        controllers[currentTextBoxIndex].text.isEmpty) {
       controllers[currentTextBoxIndex].text = text;
       currentTextBoxIndex++;
       if (clearedTextBoxCount >= 3) {
@@ -38,6 +39,132 @@ class _BiriState extends State<Biri> {
           break;
         }
       }
+    }
+    if (isAnswerCorrect()) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.symmetric(vertical: 120, horizontal: 10),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Center(
+              child: Text(
+                'Well Done!',
+              ),
+            ),
+            content: Column(
+              children: [
+                Container(
+                  child: Image.asset('assets/image/mayon.jpg'),
+                ),
+                Text(
+                    '''\nMayon, also known as Mount Mayon and Mayon Volcano is an active
+stratovolcano in the province of Albay in Bicol, philippines. A popular tourist spot, it is renowned for its perfect cone because of its symmetric conical shape, and is regarded as very sacred in Philippine mythology.'''),
+              ],
+            ),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Banaue()),
+                  );
+                },
+                child: Text('Okay'),
+              ),
+            ],
+          );
+          //   AlertDialog(
+          //   title: Text('WELL DONE!'),
+          //   content: Column(
+          //     children: [
+          //       Image.asset(
+          //           'assets/image/mayon.jpg'), // Replace 'assets/image/mayon.jpg' with the actual image path
+          //       Text(
+          //         '\nMayon, also known as Mount Mayon and Mayon Volcano '
+          //         'is an active stratovolcano in the province of Albay in Bicol, '
+          //         'Philippines. A popular tourist spot, it is renowned for its '
+          //         '"perfect cone" because of its symmetric conical shape, '
+          //         'and is regarded as very sacred in Philippine mythology.',
+          //       ),
+          //     ],
+          //   ),
+          //   backgroundColor:
+          //       Colors.greenAccent, // Set the background color to green
+          //   actions: [
+          //     Align(
+          //       alignment: Alignment.topCenter,
+          //       child: TextButton(
+          //         child: Text(
+          //           'NEXT',
+          //           style: TextStyle(
+          //             fontSize: 50,
+          //             fontWeight: FontWeight.bold,
+          //             color: Colors.black,
+          //           ),
+          //         ),
+          //         onPressed: () {
+          //           Navigator.push(
+          //             context,
+          //             MaterialPageRoute(builder: (context) => Banaue()),
+          //           );
+          //         },
+          //         style: ButtonStyle(
+          //           side: MaterialStateProperty.all(
+          //             BorderSide(
+          //               color: Colors.black,
+          //               width: 1.0,
+          //             ),
+          //           ),
+          //           backgroundColor: MaterialStateProperty.all(Colors.white),
+          //           padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // );
+        },
+      );
+    } else if (currentTextBoxIndex >= controllers.length) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Text('Incorrect Answer'),
+            content: Column(
+              children: [
+                Text(
+                  'Oops! Your answer is incorrect.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+            backgroundColor:
+                Colors.redAccent, // Set the background color to red
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  'OK',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+      );
     }
   }
 
@@ -67,16 +194,18 @@ class _BiriState extends State<Biri> {
   }
 
   List<String> targetTexts = [
-    'B',
-    'I',
-    'R',
-    'I',
-    'I',
-    'S',
+    'M',
+    'A',
+    'Y',
+    'O',
+    'N',
+    'V',
+    'O',
     'L',
+    'C',
     'A',
     'N',
-    'D'
+    'O'
   ];
   List<String> buttonLetters = [
     'B',
@@ -93,7 +222,7 @@ class _BiriState extends State<Biri> {
     'S',
     'Y',
     'L',
-    'D'
+    'M'
   ];
 
   bool isSubmitClicked = false;
@@ -109,22 +238,19 @@ class _BiriState extends State<Biri> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 28',
+      title: 'Level 1',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.keyboard_arrow_left),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
+              Navigator.pop(context);
             },
           ),
           centerTitle: true,
           title: Center(
             child: Text(
-              'Level 28',
+              'Level 1',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -143,7 +269,7 @@ class _BiriState extends State<Biri> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Hint',
+                            'Located in Bicol, Albay.',
                           ),
                           actions: [
                             ElevatedButton(
@@ -173,18 +299,18 @@ class _BiriState extends State<Biri> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/biri.JPG',
+                'assets/image/mayon.jpg',
                 width: 380,
                 height: 230,
               ),
             ),
-            SizedBox(height:15),
+            SizedBox(height: 15),
             Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 5; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -219,11 +345,11 @@ class _BiriState extends State<Biri> {
                       ),
                   ],
                 ),
-                SizedBox(height:1),
+                SizedBox(height: 1),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 4; i < 10; i++)
+                    for (int i = 5; i < 12; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -277,7 +403,8 @@ class _BiriState extends State<Biri> {
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.blue,
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 10),
                           ),
                           child: Text(
                             buttonLetters[i],
@@ -304,7 +431,8 @@ class _BiriState extends State<Biri> {
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.blue,
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 10),
                           ),
                           child: Text(
                             buttonLetters[i],
@@ -331,7 +459,8 @@ class _BiriState extends State<Biri> {
                           },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.blue,
-                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 10),
                           ),
                           child: Text(
                             buttonLetters[i],
@@ -345,161 +474,6 @@ class _BiriState extends State<Biri> {
                   ],
                 ),
               ],
-            ),
-            Container(
-              width: 200,
-              height: 50,
-              decoration: BoxDecoration(
-                gradient: isAnswerCorrect()
-                    ? LinearGradient(
-                  colors: [Colors.green, Colors.lightGreen],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                )
-                    : LinearGradient(
-                  colors: [Colors.red, Colors.pink],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  if (isAnswerCorrect()) {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Text('WELL DONE!'),
-                          content: Column(
-                            children: [
-                              Image.asset('assets/image/biri.JPG'), // Replace 'assets/image/mayon.jpg' with the actual image path
-                              Text(
-                                '\nBiri, officially the Municipality of Biri, is a '
-                                    '5th class municipality in the province of '
-                                    'Northern Samar, Philippines. According to the '
-                                    '2020 census, it has a population of 11,274 people.'
-                                    'The archipelagic town is also known for its '
-                                    'inakob, a traditional Waray dish made by first '
-                                    'cooking grated root crops (gabi) with coconut '
-                                    'milk, condensed milk, eggs, brown sugar, and an '
-                                    'herb called anuv.',
-                              ),
-                            ],
-                          ),
-                          backgroundColor: Colors.greenAccent, // Set the background color to green
-                          actions: [
-                            Align(
-                              alignment: Alignment.topCenter,
-                              child: TextButton(
-                                child: Text(
-                                  'NEXT',
-                                  style: TextStyle(
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => Biri()),
-                                  );
-                                },
-                                style: ButtonStyle(
-                                  side: MaterialStateProperty.all(
-                                    BorderSide(
-                                      color: Colors.black,
-                                      width: 1.0,
-                                    ),
-                                  ),
-                                  backgroundColor: MaterialStateProperty.all(Colors.white),
-                                  padding: MaterialStateProperty.all(EdgeInsets.all(10)),
-                                ),
-                              ),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return Dialog(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          backgroundColor: Colors.red,
-                          child: Container(
-                            padding: EdgeInsets.all(16.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  'Incorrect Answer',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(height: 10),
-                                Text(
-                                  'Oops! Your answer is incorrect.',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(height: 20),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: Text(
-                                    'OK',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.red,
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    );
-                  }
-                },
-                child: Text(
-                  'Submit',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.pressed)) {
-                        return Colors.blue.withOpacity(0.5); // Change the color when the button is pressed
-                      }
-                      return Colors.blue; // Default color
-                    },
-                  ),
-                  padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 10,
-                    ),
-                  ),
-                ),
-              ),
             ),
           ],
         ),

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:system/home.dart';
+import 'package:system/level%2026/sagada.dart';
 
-void main() => runApp(Biri());
+void main() => runApp(Bangui());
 
-class Biri extends StatefulWidget {
+class Bangui extends StatefulWidget {
   @override
-  _BiriState createState() => _BiriState();
+  _BanguiState createState() => _BanguiState();
 }
 
-class _BiriState extends State<Biri> {
+class _BanguiState extends State<Bangui> {
   final List<TextEditingController> controllers = List.generate(
-    10,
+    14,
         (_) => TextEditingController(),
   );
 
@@ -68,15 +69,19 @@ class _BiriState extends State<Biri> {
 
   List<String> targetTexts = [
     'B',
-    'I',
-    'R',
-    'I',
-    'I',
-    'S',
-    'L',
     'A',
     'N',
-    'D'
+    'G',
+    'U',
+    'I',
+    'W',
+    'I',
+    'N',
+    'D',
+    'F',
+    'A',
+    'R',
+    'M'
   ];
   List<String> buttonLetters = [
     'B',
@@ -88,12 +93,12 @@ class _BiriState extends State<Biri> {
     'I',
     'C',
     'E',
-    'V',
-    'P',
+    'G',
+    'D',
     'S',
-    'Y',
-    'L',
-    'D'
+    'W',
+    'F',
+    'M'
   ];
 
   bool isSubmitClicked = false;
@@ -109,7 +114,7 @@ class _BiriState extends State<Biri> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 28',
+      title: 'Level 25',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -124,7 +129,7 @@ class _BiriState extends State<Biri> {
           centerTitle: true,
           title: Center(
             child: Text(
-              'Level 28',
+              'Level 25',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -143,7 +148,7 @@ class _BiriState extends State<Biri> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Hint',
+                            'Hint.',
                           ),
                           actions: [
                             ElevatedButton(
@@ -173,7 +178,7 @@ class _BiriState extends State<Biri> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/biri.JPG',
+                'assets/image/bangui.jpg',
                 width: 380,
                 height: 230,
               ),
@@ -184,7 +189,7 @@ class _BiriState extends State<Biri> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 0; i < 6; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -223,7 +228,7 @@ class _BiriState extends State<Biri> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 4; i < 10; i++)
+                    for (int i = 6; i < 14; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -373,17 +378,14 @@ class _BiriState extends State<Biri> {
                           title: Text('WELL DONE!'),
                           content: Column(
                             children: [
-                              Image.asset('assets/image/biri.JPG'), // Replace 'assets/image/mayon.jpg' with the actual image path
+                              Image.asset('assets/image/bangui.jpg'), // Replace 'assets/image/mayon.jpg' with the actual image path
                               Text(
-                                '\nBiri, officially the Municipality of Biri, is a '
-                                    '5th class municipality in the province of '
-                                    'Northern Samar, Philippines. According to the '
-                                    '2020 census, it has a population of 11,274 people.'
-                                    'The archipelagic town is also known for its '
-                                    'inakob, a traditional Waray dish made by first '
-                                    'cooking grated root crops (gabi) with coconut '
-                                    'milk, condensed milk, eggs, brown sugar, and an '
-                                    'herb called anuv.',
+                                '\nThe Bangui Wind Farm is a wind farm in Bangui, '
+                                    'Ilocos Norte, Philippines. The wind farm uses '
+                                    '20 units of 70-meter (230 ft) high Vestas V82 1.65 MW '
+                                    'wind turbines, arranged in a single row stretching '
+                                    'along a 9-kilometer (5.6 mi) shoreline of Bangui Bay, '
+                                    'facing the South China Sea.',
                               ),
                             ],
                           ),
@@ -403,7 +405,7 @@ class _BiriState extends State<Biri> {
                                 onPressed: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => Biri()),
+                                    MaterialPageRoute(builder: (context) => Sagada()),
                                   );
                                 },
                                 style: ButtonStyle(

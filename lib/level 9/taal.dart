@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:system/home.dart';
+import 'package:system/level%2010/malacanang.dart';
 
-void main() => runApp(Biri());
 
-class Biri extends StatefulWidget {
+void main() => runApp(Taal());
+
+class Taal extends StatefulWidget {
   @override
-  _BiriState createState() => _BiriState();
+  _TaalState createState() => _TaalState();
 }
 
-class _BiriState extends State<Biri> {
+class _TaalState extends State<Taal> {
   final List<TextEditingController> controllers = List.generate(
-    10,
+    11,
         (_) => TextEditingController(),
   );
 
@@ -67,19 +69,20 @@ class _BiriState extends State<Biri> {
   }
 
   List<String> targetTexts = [
-    'B',
-    'I',
-    'R',
-    'I',
-    'I',
-    'S',
+    'T',
+    'A',
+    'A',
     'L',
+    'V',
+    'O',
+    'L',
+    'C',
     'A',
     'N',
-    'D'
+    'O'
   ];
   List<String> buttonLetters = [
-    'B',
+    'M',
     'U',
     'N',
     'A',
@@ -91,25 +94,17 @@ class _BiriState extends State<Biri> {
     'V',
     'P',
     'S',
-    'Y',
+    'G',
     'L',
-    'D'
+    'T'
   ];
 
   bool isSubmitClicked = false;
 
-  bool _showHint = false;
-
-  void _toggleHint() {
-    setState(() {
-      _showHint = !_showHint;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 28',
+      title: 'Level 9',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -122,12 +117,10 @@ class _BiriState extends State<Biri> {
             },
           ),
           centerTitle: true,
-          title: Center(
-            child: Text(
-              'Level 28',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+          title: Text(
+            'Level 9',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
             ),
           ),
           actions: [
@@ -173,9 +166,9 @@ class _BiriState extends State<Biri> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/biri.JPG',
-                width: 380,
-                height: 230,
+                'assets/image/taal.png',
+                width: 350,
+                height: 250,
               ),
             ),
             SizedBox(height:15),
@@ -223,7 +216,7 @@ class _BiriState extends State<Biri> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 4; i < 10; i++)
+                    for (int i = 4; i < 11; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -260,7 +253,7 @@ class _BiriState extends State<Biri> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Column(
               children: [
                 Row(
@@ -346,164 +339,163 @@ class _BiriState extends State<Biri> {
                 ),
               ],
             ),
-            Container(
-              width: 200,
-              height: 50,
-              decoration: BoxDecoration(
-                gradient: isAnswerCorrect()
-                    ? LinearGradient(
-                  colors: [Colors.green, Colors.lightGreen],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                )
-                    : LinearGradient(
-                  colors: [Colors.red, Colors.pink],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  if (isAnswerCorrect()) {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Text('WELL DONE!'),
-                          content: Column(
-                            children: [
-                              Image.asset('assets/image/biri.JPG'), // Replace 'assets/image/mayon.jpg' with the actual image path
-                              Text(
-                                '\nBiri, officially the Municipality of Biri, is a '
-                                    '5th class municipality in the province of '
-                                    'Northern Samar, Philippines. According to the '
-                                    '2020 census, it has a population of 11,274 people.'
-                                    'The archipelagic town is also known for its '
-                                    'inakob, a traditional Waray dish made by first '
-                                    'cooking grated root crops (gabi) with coconut '
-                                    'milk, condensed milk, eggs, brown sugar, and an '
-                                    'herb called anuv.',
+                Container(
+                  width: 200,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    gradient: isAnswerCorrect()
+                        ? LinearGradient(
+                      colors: [Colors.green, Colors.lightGreen],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    )
+                        : LinearGradient(
+                      colors: [Colors.red, Colors.pink],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (isAnswerCorrect()) {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text('WELL DONE!'),
+                              content: Column(
+                                children: [
+                                  Image.asset('assets/image/taal.png'), // Replace 'assets/image/mayon.jpg' with the actual image path
+                                  Text(
+                                    '\nTaal Volcano is an active volcano located on the island of Luzon, '
+                                        'in the province of Batangas, Philippines. '
+                                        'It is known for its picturesque crater lake, '
+                                        'which contains another small volcanic island called Vulcan Point. '
+                                        'Taal Volcano is considered one of the worlds smallest active volcanoes, '
+                                        'standing at only 311 meters tall.',
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                          backgroundColor: Colors.greenAccent, // Set the background color to green
-                          actions: [
-                            Align(
-                              alignment: Alignment.topCenter,
-                              child: TextButton(
-                                child: Text(
-                                  'NEXT',
-                                  style: TextStyle(
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) => Biri()),
-                                  );
-                                },
-                                style: ButtonStyle(
-                                  side: MaterialStateProperty.all(
-                                    BorderSide(
-                                      color: Colors.black,
-                                      width: 1.0,
+                              backgroundColor: Colors.greenAccent, // Set the background color to green
+                              actions: [
+                                Align(
+                                  alignment: Alignment.topCenter,
+                                  child: TextButton(
+                                    child: Text(
+                                      'NEXT',
+                                      style: TextStyle(
+                                        fontSize: 50,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
                                     ),
-                                  ),
-                                  backgroundColor: MaterialStateProperty.all(Colors.white),
-                                  padding: MaterialStateProperty.all(EdgeInsets.all(10)),
-                                ),
-                              ),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return Dialog(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          backgroundColor: Colors.red,
-                          child: Container(
-                            padding: EdgeInsets.all(16.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  'Incorrect Answer',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(height: 10),
-                                Text(
-                                  'Oops! Your answer is incorrect.',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(height: 20),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: Text(
-                                    'OK',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.red,
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => Malacanang()),
+                                      );
+                                    },
+                                    style: ButtonStyle(
+                                      side: MaterialStateProperty.all(
+                                        BorderSide(
+                                          color: Colors.black,
+                                          width: 1.0,
+                                        ),
+                                      ),
+                                      backgroundColor: MaterialStateProperty.all(Colors.white),
+                                      padding: MaterialStateProperty.all(EdgeInsets.all(10)),
                                     ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Colors.white,
                                   ),
                                 ),
                               ],
-                            ),
-                          ),
+                            );
+                          },
                         );
-                      },
-                    );
-                  }
-                },
-                child: Text(
-                  'Submit',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.pressed)) {
-                        return Colors.blue.withOpacity(0.5); // Change the color when the button is pressed
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Dialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              backgroundColor: Colors.red,
+                              child: Container(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      'Incorrect Answer',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Text(
+                                      'Oops! Your answer is incorrect.',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(height: 20),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text(
+                                        'OK',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.red,
+                                        ),
+                                      ),
+                                      style: ElevatedButton.styleFrom(
+                                        primary: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
                       }
-                      return Colors.blue; // Default color
                     },
-                  ),
-                  padding: MaterialStateProperty.all<EdgeInsets>(
-                    EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 10,
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                            (Set<MaterialState> states) {
+                          if (states.contains(MaterialState.pressed)) {
+                            return Colors.blue.withOpacity(0.5); // Change the color when the button is pressed
+                          }
+                          return Colors.blue; // Default color
+                        },
+                      ),
+                      padding: MaterialStateProperty.all<EdgeInsets>(
+                        EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 10,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
+
         ),
-      ),
-    );
+      );
   }
 }
+
