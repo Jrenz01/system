@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
                       MaterialPageRoute(builder: (context) => Load()),
                     );
                   },
-                  child: Text('LOAD'),
+                  child: Text('LEVELS'),
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.all(15),
                     textStyle: TextStyle(

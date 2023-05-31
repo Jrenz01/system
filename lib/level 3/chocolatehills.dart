@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/home.dart';
+import 'package:system/level%202/banaue.dart';
 import 'package:system/level%204/luneta.dart';
 
 void main() => runApp(Chocolatehills());
@@ -12,7 +12,7 @@ class Chocolatehills extends StatefulWidget {
 class _ChocolatehillsState extends State<Chocolatehills> {
   final List<TextEditingController> controllers = List.generate(
     14,
-        (_) => TextEditingController(),
+    (_) => TextEditingController(),
   );
 
   int currentTextBoxIndex = 0;
@@ -46,48 +46,73 @@ class _ChocolatehillsState extends State<Chocolatehills> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('WELL DONE!'),
+            insetPadding: EdgeInsets.symmetric(vertical: 120, horizontal: 10),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Center(
+              child: Text(
+                'Well Done!',
+              ),
+            ),
             content: Column(
               children: [
-                Image.asset('assets/image/chocolatehills.png'), // Replace 'assets/image/mayon.jpg' with the actual image path
+                Container(
+                  child: Image.asset(
+                    'assets/image/banaue.jpg',
+                    width: 250,
+                    height: 150,
+                  ),
+                ),
                 Text(
-                  '\nThe Chocolate Hills are a geological formation located in the '
-                      'Bohol province of the Philippines. The hills consist of '
-                      'around 1,200 to 1,700 individual mounds that are mostly '
-                      'symmetrical and conical in shape, and are covered in grass '
-                      'that turns brown during the dry season, giving them the '
-                      'appearance of chocolate mounds.',
+                    '''\nThe Chocolate Hills are a geological formation. The hills consist of around 1,200 to 1,700 individual mounds that are mostly symmetrical and conical in shape, and are covered in grass that turns brown during the dry season, giving them the appearance of chocolate mounds.\n\nEstablished: June 18, 1988.\nLocation: Bohol Province.\nRock Age: Late Pliocene to Early Pleistocene.'''),
+              ],
+            ),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Luneta()),
+                  );
+                },
+                child: Text('Next'),
+              ),
+            ],
+          );
+        },
+      );
+    } else if (currentTextBoxIndex >= controllers.length) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Text('Incorrect Answer'),
+            content: Column(
+              children: [
+                Text(
+                  'Oops! Your answer is incorrect.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
-            backgroundColor: Colors.greenAccent, // Set the background color to green
+            backgroundColor:
+                Colors.redAccent, // Set the background color to red
             actions: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: TextButton(
-                  child: Text(
-                    'NEXT',
-                    style: TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Luneta()),
-                    );
-                  },
-                  style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                      BorderSide(
-                        color: Colors.black,
-                        width: 1.0,
-                      ),
-                    ),
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
-                    padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  'OK',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -122,7 +147,6 @@ class _ChocolatehillsState extends State<Chocolatehills> {
     }
     return true;
   }
-
 
   List<String> targetTexts = [
     'C',
@@ -163,25 +187,25 @@ class _ChocolatehillsState extends State<Chocolatehills> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Level 3',
-        home: Scaffold(
+      title: 'Level 3',
+      home: Scaffold(
         appBar: AppBar(
-        leading: IconButton(
-        icon: Icon(Icons.keyboard_arrow_left),
-    onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Home()),
-      );
-    },
-    ),
-    centerTitle: true,
-    title: Text(
-    'Level 3',
-    style: TextStyle(
-    fontWeight: FontWeight.bold,
-    ),
-    ),
+          leading: IconButton(
+            icon: Icon(Icons.keyboard_arrow_left),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Banaue()),
+              );
+            },
+          ),
+          centerTitle: true,
+          title: Text(
+            'Level 3',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           actions: [
             Container(
               width: 40,
@@ -195,7 +219,7 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Hint',
+                            'Located in Bohol.',
                           ),
                           actions: [
                             ElevatedButton(
@@ -217,312 +241,164 @@ class _ChocolatehillsState extends State<Chocolatehills> {
               ),
             ),
           ],
-    ),
-    backgroundColor: Colors.lightBlue[100],
-    body: Column(
-    children: [
-    SizedBox(height: 10),
-    Align(
-    alignment: Alignment.topCenter,
-    child: Image.asset(
-    'assets/image/chocolatehills.png',
-    width: 380,
-    height: 230,
-    ),
-    ),
-    SizedBox(height: 10),
-    Column(
-    children: [
-    Wrap(
-    alignment: WrapAlignment.center,
-    children: List.generate(
-    14,
-    (index) => Padding(
-    padding: EdgeInsets.symmetric(horizontal: 2,),
-    child: GestureDetector(
-    onTap: () {
-    if (controllers[index].text.isNotEmpty) {
-    clearTextBox(index);
-    }
-    },
-    child: Container(
-    width: 37,
-    child: TextField(
-    controller: controllers[index],
-    enabled: false,
-    textAlign: TextAlign.center,
-    maxLength: 1,
-    style: TextStyle(
-    color: targetTexts[index] == controllers[index].text
-    ? Colors.white
-        : Colors.black,
-    ),
-    decoration: InputDecoration(
-    filled: true,
-    fillColor: targetTexts[index] == controllers[index].text
-    ? Colors.green
-        : Colors.white,
-    counterText: '',
-    border: OutlineInputBorder(),
-    ),
-    ),                        ),
-    ),
-    ),
-    ),
-    ),
-    SizedBox(height: 20),
-    Column(
-    children: [
-    Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    for (int i = 0; i < 5; i++)
-    Padding(
-    padding: EdgeInsets.symmetric(horizontal: 6),
-    child: ElevatedButton(
-    onPressed: () {
-    if (!isAnswerCorrect()) {
-    updateCurrentTextBox(buttonLetters[i]);
-    }
-    },
-    style: ElevatedButton.styleFrom(
-    primary: Colors.blue,
-    padding: EdgeInsets.symmetric(
-    horizontal: 20,
-    vertical: 10,
-    ),
-    ),
-    child: Text(
-    buttonLetters[i],
-    style: TextStyle(
-    fontSize: 16,
-    color: Colors.white,
-    ),
-    ),
-    ),
-    ),
-    ],
-    ),
-    Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    for (int i = 5; i < 10; i++)
-    Padding(
-    padding: EdgeInsets.symmetric(horizontal: 6),
-    child: ElevatedButton(
-    onPressed: () {
-    if (!isAnswerCorrect()) {
-    updateCurrentTextBox(buttonLetters[i]);
-    }
-    },
-    style: ElevatedButton.styleFrom(
-    primary: Colors.blue,
-    padding: EdgeInsets.symmetric(
-    horizontal: 20,
-    vertical: 10,
-    ),
-    ),
-    child: Text(
-    buttonLetters[i],
-    style: TextStyle(
-    fontSize: 16,
-    color: Colors.white,
-    ),
-    ),
-    ),
-    ),
-    ],
-    ),
-    Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    for (int i = 10; i < 15; i++)
-    Padding(
-    padding: EdgeInsets.symmetric(horizontal: 6),
-    child: ElevatedButton(
-    onPressed: () {
-    if (!isAnswerCorrect()) {
-    updateCurrentTextBox(buttonLetters[i]);
-    }
-    },
-    style: ElevatedButton.styleFrom(
-    primary: Colors.blue,
-    padding: EdgeInsets.symmetric(
-    horizontal: 20,
-    vertical: 10,
-    ),
-    ),
-    child: Text(
-    buttonLetters[i],
-    style: TextStyle(
-    fontSize: 16,
-    color: Colors.white,
-    ),
-    ),
-    ),
-    ),
-    ],
-    ),
-    ],
-    ),
-      Container(
-        width: 200,
-        height: 50,
-        decoration: BoxDecoration(
-          gradient: isAnswerCorrect()
-              ? LinearGradient(
-            colors: [Colors.green, Colors.lightGreen],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          )
-              : LinearGradient(
-            colors: [Colors.red, Colors.pink],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(25),
         ),
-        child: ElevatedButton(
-          onPressed: () {
-            if (isAnswerCorrect()) {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: Text('WELL DONE!'),
-                    content: Column(
-                      children: [
-                        Image.asset('assets/image/chocolatehills.png'), // Replace 'assets/image/mayon.jpg' with the actual image path
-                        Text(
-                          '\nThe Chocolate Hills are a geological formation located in the '
-                              'Bohol province of the Philippines. The hills consist of '
-                              'around 1,200 to 1,700 individual mounds that are mostly '
-                              'symmetrical and conical in shape, and are covered in grass '
-                              'that turns brown during the dry season, giving them the '
-                              'appearance of chocolate mounds.',
-                        ),
-                      ],
-                    ),
-                    backgroundColor: Colors.greenAccent, // Set the background color to green
-                    actions: [
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: TextButton(
-                          child: Text(
-                            'NEXT',
-                            style: TextStyle(
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Luneta()),
-                            );
-                          },
-                          style: ButtonStyle(
-                            side: MaterialStateProperty.all(
-                              BorderSide(
-                                color: Colors.black,
-                                width: 1.0,
-                              ),
-                            ),
-                            backgroundColor: MaterialStateProperty.all(Colors.white),
-                            padding: MaterialStateProperty.all(EdgeInsets.all(10)),
-                          ),
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              );
-            } else {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return Dialog(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    backgroundColor: Colors.red,
-                    child: Container(
-                      padding: EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'Incorrect Answer',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'Oops! Your answer is incorrect.',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                            ),
-                          ),
-                          SizedBox(height: 20),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: Text(
-                              'OK',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.red,
-                              ),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              );
-            }
-          },
-          child: Text(
-            'Submit',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.white,
-            ),
-          ),
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                  (Set<MaterialState> states) {
-                if (states.contains(MaterialState.pressed)) {
-                  return Colors.blue.withOpacity(0.5); // Change the color when the button is pressed
-                }
-                return Colors.blue; // Default color
-              },
-            ),
-            padding: MaterialStateProperty.all<EdgeInsets>(
-              EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 10,
+        backgroundColor: Colors.lightBlue[100],
+        body: Column(
+          children: [
+            SizedBox(height: 40),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Image.asset(
+                'assets/image/chocolatehills.png',
+                width: 380,
+                height: 230,
               ),
             ),
-          ),
-        ),
-      ),
+            SizedBox(height: 40),
+            Column(
+              children: [
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  children: List.generate(
+                    14,
+                    (index) => Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 2,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          if (controllers[index].text.isNotEmpty) {
+                            clearTextBox(index);
+                          }
+                        },
+                        child: Container(
+                          width: 37,
+                          child: TextField(
+                            controller: controllers[index],
+                            enabled: false,
+                            textAlign: TextAlign.center,
+                            maxLength: 1,
+                            style: TextStyle(
+                              color:
+                                  targetTexts[index] == controllers[index].text
+                                      ? Colors.white
+                                      : Colors.black,
+                            ),
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor:
+                                  targetTexts[index] == controllers[index].text
+                                      ? Colors.green
+                                      : Colors.white,
+                              counterText: '',
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        for (int i = 0; i < 5; i++)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 6),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (!isAnswerCorrect()) {
+                                  updateCurrentTextBox(buttonLetters[i]);
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.blue,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 10,
+                                ),
+                              ),
+                              child: Text(
+                                buttonLetters[i],
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        for (int i = 5; i < 10; i++)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 6),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (!isAnswerCorrect()) {
+                                  updateCurrentTextBox(buttonLetters[i]);
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.blue,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 10,
+                                ),
+                              ),
+                              child: Text(
+                                buttonLetters[i],
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        for (int i = 10; i < 15; i++)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 6),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (!isAnswerCorrect()) {
+                                  updateCurrentTextBox(buttonLetters[i]);
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.blue,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 10,
+                                ),
+                              ),
+                              child: Text(
+                                buttonLetters[i],
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
-    ],
-        ),
-    ),
+      ),
     );
   }
 }
-

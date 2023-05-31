@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:system/home.dart';
 import 'package:system/level%202/banaue.dart';
 
 void main() => runApp(Mayon());
@@ -56,11 +57,14 @@ class _MayonState extends State<Mayon> {
             content: Column(
               children: [
                 Container(
-                  child: Image.asset('assets/image/mayon.jpg'),
+                  child: Image.asset(
+                    'assets/image/mayon.jpg',
+                    width: 250,
+                    height: 150,
+                  ),
                 ),
                 Text(
-                    '''\nMayon, also known as Mount Mayon and Mayon Volcano is an active
-stratovolcano in the province of Albay in Bicol, philippines. A popular tourist spot, it is renowned for its perfect cone because of its symmetric conical shape, and is regarded as very sacred in Philippine mythology.'''),
+                    '''\nMayon, also known as Mount Mayon and Mayon Volcano is an active astratovolcano in the province of Albay in Bicol, philippines. A popular tourist spot, it is renowned for its perfect cone because of its symmetric conical shape.\n\nLocation: Bicol, Albay\nFirst ascent: Scotsmen Paton & Stewart (1858)\nEruption: 30+ eruptions recorded since 1616. '''),
               ],
             ),
             actions: [
@@ -71,59 +75,10 @@ stratovolcano in the province of Albay in Bicol, philippines. A popular tourist 
                     MaterialPageRoute(builder: (context) => Banaue()),
                   );
                 },
-                child: Text('Okay'),
+                child: Text('Next'),
               ),
             ],
           );
-          //   AlertDialog(
-          //   title: Text('WELL DONE!'),
-          //   content: Column(
-          //     children: [
-          //       Image.asset(
-          //           'assets/image/mayon.jpg'), // Replace 'assets/image/mayon.jpg' with the actual image path
-          //       Text(
-          //         '\nMayon, also known as Mount Mayon and Mayon Volcano '
-          //         'is an active stratovolcano in the province of Albay in Bicol, '
-          //         'Philippines. A popular tourist spot, it is renowned for its '
-          //         '"perfect cone" because of its symmetric conical shape, '
-          //         'and is regarded as very sacred in Philippine mythology.',
-          //       ),
-          //     ],
-          //   ),
-          //   backgroundColor:
-          //       Colors.greenAccent, // Set the background color to green
-          //   actions: [
-          //     Align(
-          //       alignment: Alignment.topCenter,
-          //       child: TextButton(
-          //         child: Text(
-          //           'NEXT',
-          //           style: TextStyle(
-          //             fontSize: 50,
-          //             fontWeight: FontWeight.bold,
-          //             color: Colors.black,
-          //           ),
-          //         ),
-          //         onPressed: () {
-          //           Navigator.push(
-          //             context,
-          //             MaterialPageRoute(builder: (context) => Banaue()),
-          //           );
-          //         },
-          //         style: ButtonStyle(
-          //           side: MaterialStateProperty.all(
-          //             BorderSide(
-          //               color: Colors.black,
-          //               width: 1.0,
-          //             ),
-          //           ),
-          //           backgroundColor: MaterialStateProperty.all(Colors.white),
-          //           padding: MaterialStateProperty.all(EdgeInsets.all(10)),
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // );
         },
       );
     } else if (currentTextBoxIndex >= controllers.length) {
@@ -244,7 +199,10 @@ stratovolcano in the province of Albay in Bicol, philippines. A popular tourist 
           leading: IconButton(
             icon: Icon(Icons.keyboard_arrow_left),
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
+              );
             },
           ),
           centerTitle: true,
@@ -295,7 +253,7 @@ stratovolcano in the province of Albay in Bicol, philippines. A popular tourist 
         backgroundColor: Colors.lightBlue[100],
         body: Column(
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 40),
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
@@ -304,7 +262,7 @@ stratovolcano in the province of Albay in Bicol, philippines. A popular tourist 
                 height: 230,
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 40),
             Column(
               children: [
                 Row(
@@ -345,7 +303,7 @@ stratovolcano in the province of Albay in Bicol, philippines. A popular tourist 
                       ),
                   ],
                 ),
-                SizedBox(height: 1),
+                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -386,7 +344,7 @@ stratovolcano in the province of Albay in Bicol, philippines. A popular tourist 
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             Column(
               children: [
                 Row(

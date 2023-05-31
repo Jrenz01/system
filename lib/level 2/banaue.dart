@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/home.dart';
+import 'package:system/level%201/mayon.dart';
 import 'package:system/level%203/chocolatehills.dart';
 
 void main() => runApp(Banaue());
@@ -12,7 +12,7 @@ class Banaue extends StatefulWidget {
 class _BanaueState extends State<Banaue> {
   final List<TextEditingController> controllers = List.generate(
     6,
-        (_) => TextEditingController(),
+    (_) => TextEditingController(),
   );
 
   int currentTextBoxIndex = 0;
@@ -46,49 +46,73 @@ class _BanaueState extends State<Banaue> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('WELL DONE!'),
+            insetPadding: EdgeInsets.symmetric(vertical: 120, horizontal: 10),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Center(
+              child: Text(
+                'Well Done!',
+              ),
+            ),
             content: Column(
               children: [
-                Image.asset('assets/image/banaue.jpg'), // Replace 'assets/image/mayon.jpg' with the actual image path
+                Container(
+                  child: Image.asset(
+                    'assets/image/banaue.jpg',
+                    width: 250,
+                    height: 150,
+                  ),
+                ),
                 Text(
-                  '\nThe Banaue Rice Terraces are a National Cultural Treasure of the '
-                      'Philippines and are considered to be the 8th Natural Wonder '
-                      'of the World by many Filipinos.  The view is spectacular, '
-                      'majestic and inspiring.  The Banaue Rice Terraces are located '
-                      'on the mountains of Ifugao and were carved there about 2,000 '
-                      'years ago by the ancestors of the present day Philippines. '
-                      'It is said that they were built by hand and were used to plant rice.',
+                    '''\nBanaue, officially the Municipality of Banaue is a 4th class municipality in the province of Ifugao, Philippines. According to the 2020 census, it has a population of 20,652 people. It is widely known as the site of the UNESCO World Heritage Site, the Batad Rice Terraces and Bangaan Rice Terraces.\n\nLocation: Cordillera Administrative Region, Ifugao.\nBuild: 2,000+ years ago.'''),
+              ],
+            ),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Chocolatehills()),
+                  );
+                },
+                child: Text('Next'),
+              ),
+            ],
+          );
+        },
+      );
+    } else if (currentTextBoxIndex >= controllers.length) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Text('Incorrect Answer'),
+            content: Column(
+              children: [
+                Text(
+                  'Oops! Your answer is incorrect.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
-            backgroundColor: Colors.greenAccent, // Set the background color to green
+            backgroundColor:
+                Colors.redAccent, // Set the background color to red
             actions: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: TextButton(
-                  child: Text(
-                    'NEXT',
-                    style: TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Chocolatehills()),
-                    );
-                  },
-                  style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                      BorderSide(
-                        color: Colors.black,
-                        width: 1.0,
-                      ),
-                    ),
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
-                    padding: MaterialStateProperty.all(EdgeInsets.all(10)),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  'OK',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -139,7 +163,7 @@ class _BanaueState extends State<Banaue> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Home()),
+                MaterialPageRoute(builder: (context) => Mayon()),
               );
             },
           ),
@@ -163,7 +187,7 @@ class _BanaueState extends State<Banaue> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Hint.',
+                            'It created by the Ifugao people.',
                           ),
                           actions: [
                             ElevatedButton(
@@ -189,7 +213,7 @@ class _BanaueState extends State<Banaue> {
         backgroundColor: Colors.lightBlue[100],
         body: Column(
           children: [
-            SizedBox(height: 1),
+            SizedBox(height: 40),
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
@@ -198,14 +222,14 @@ class _BanaueState extends State<Banaue> {
                 height: 230,
               ),
             ),
-            SizedBox(height: 1),
+            SizedBox(height: 40),
             Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                     6, // Update the number of text boxes
-                        (index) => Padding(
+                    (index) => Padding(
                       padding: EdgeInsets.symmetric(horizontal: 4),
                       child: GestureDetector(
                         onTap: () {
@@ -217,15 +241,22 @@ class _BanaueState extends State<Banaue> {
                           width: 50,
                           child: TextField(
                             controller: controllers[index],
-                            enabled: false, // Disable editing if there is already a letter
+                            enabled:
+                                false, // Disable editing if there is already a letter
                             textAlign: TextAlign.center,
                             maxLength: 1, // Set maximum character length to 1
                             style: TextStyle(
-                              color: targetTexts[index] == controllers[index].text ? Colors.white : Colors.black,
+                              color:
+                                  targetTexts[index] == controllers[index].text
+                                      ? Colors.white
+                                      : Colors.black,
                             ),
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: targetTexts[index] == controllers[index].text ? Colors.green : Colors.white,
+                              fillColor:
+                                  targetTexts[index] == controllers[index].text
+                                      ? Colors.green
+                                      : Colors.white,
                               counterText: '',
                               border: OutlineInputBorder(),
                             ),
@@ -235,12 +266,12 @@ class _BanaueState extends State<Banaue> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                     firstbutton.length,
-                        (index) => Padding(
+                    (index) => Padding(
                       padding: EdgeInsets.symmetric(horizontal: 6),
                       child: ElevatedButton(
                         onPressed: () {
@@ -271,7 +302,7 @@ class _BanaueState extends State<Banaue> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                     secondbutton.length,
-                        (index) => Padding(
+                    (index) => Padding(
                       padding: EdgeInsets.symmetric(horizontal: 6),
                       child: ElevatedButton(
                         onPressed: () {
@@ -297,9 +328,9 @@ class _BanaueState extends State<Banaue> {
                     ),
                   ),
                 ),
+              ],
+            ),
           ],
-        ),
-        ],
         ),
       ),
     );

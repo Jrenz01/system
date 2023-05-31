@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:system/level%2025/bangui.dart';
 import 'package:system/level%2027/basco.dart';
-import 'package:system/level%2016/fort.dart';
-import 'package:system/home.dart';
 
 void main() => runApp(Sagada());
 
@@ -13,14 +12,15 @@ class Sagada extends StatefulWidget {
 class _SagadaState extends State<Sagada> {
   final List<TextEditingController> controllers = List.generate(
     6,
-        (_) => TextEditingController(),
+    (_) => TextEditingController(),
   );
 
   int currentTextBoxIndex = 0;
   int clearedTextBoxCount = 0;
 
   void updateCurrentTextBox(String text) {
-    if (currentTextBoxIndex < controllers.length && controllers[currentTextBoxIndex].text.isEmpty) {
+    if (currentTextBoxIndex < controllers.length &&
+        controllers[currentTextBoxIndex].text.isEmpty) {
       controllers[currentTextBoxIndex].text = text;
       currentTextBoxIndex++;
       if (clearedTextBoxCount >= 3) {
@@ -41,6 +41,86 @@ class _SagadaState extends State<Sagada> {
         }
       }
     }
+    if (isAnswerCorrect()) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.symmetric(vertical: 120, horizontal: 10),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Center(
+              child: Text(
+                'Well Done!',
+              ),
+            ),
+            content: Column(
+              children: [
+                Container(
+                  child: Image.asset(
+                    'assets/image/sagada.jpg',
+                    width: 250,
+                    height: 150,
+                  ),
+                ),
+                Text(
+                    '''\nSagada is a town in the Cordillera Mountains, within the Philippines’ Mountain Province. Echo Valley’s hanging coffins are displayed high on cliffs, while centuries-old coffins are stacked in burial sites like Lumiang Cave. The nearby Sumaguing Cave has unusual limestone formations.'''),
+              ],
+            ),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Basco()),
+                  );
+                },
+                child: Text('Next'),
+              ),
+            ],
+          );
+        },
+      );
+    } else if (currentTextBoxIndex >= controllers.length) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Text('Incorrect Answer'),
+            content: Column(
+              children: [
+                Text(
+                  'Oops! Your answer is incorrect.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+            backgroundColor:
+                Colors.redAccent, // Set the background color to red
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  'OK',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 
   void clearTextBox(int index) {
@@ -59,19 +139,18 @@ class _SagadaState extends State<Sagada> {
     }
   }
 
-
-  List<String> targetTexts = ['S', 'A', 'G', 'A', 'D', 'A'];
-  List<String> firstbutton = ['E', 'S', 'O', 'A', 'C'];
-  List<String> secondbutton = ['B', 'G', 'N', 'R', 'D'];
-
   bool isAnswerCorrect() {
     for (var i = 0; i < controllers.length; i++) {
-      if (controllers[i].text != targetTexts[i]) {
+      if (i >= targetTexts.length || controllers[i].text != targetTexts[i]) {
         return false;
       }
     }
     return true;
   }
+
+  List<String> targetTexts = ['S', 'A', 'G', 'A', 'D', 'A'];
+  List<String> firstbutton = ['E', 'S', 'O', 'A', 'C'];
+  List<String> secondbutton = ['B', 'G', 'N', 'R', 'D'];
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +163,7 @@ class _SagadaState extends State<Sagada> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Home()),
+                MaterialPageRoute(builder: (context) => Bangui()),
               );
             },
           ),
@@ -134,7 +213,7 @@ class _SagadaState extends State<Sagada> {
         backgroundColor: Colors.lightBlue[100],
         body: Column(
           children: [
-            SizedBox(height: 1),
+            SizedBox(height: 20),
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
@@ -150,7 +229,7 @@ class _SagadaState extends State<Sagada> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                     6, // Update the number of text boxes
-                        (index) => Padding(
+                    (index) => Padding(
                       padding: EdgeInsets.symmetric(horizontal: 4),
                       child: GestureDetector(
                         onTap: () {
@@ -162,15 +241,22 @@ class _SagadaState extends State<Sagada> {
                           width: 50,
                           child: TextField(
                             controller: controllers[index],
-                            enabled: false, // Disable editing if there is already a letter
+                            enabled:
+                                false, // Disable editing if there is already a letter
                             textAlign: TextAlign.center,
                             maxLength: 1, // Set maximum character length to 1
                             style: TextStyle(
-                              color: targetTexts[index] == controllers[index].text ? Colors.white : Colors.black,
+                              color:
+                                  targetTexts[index] == controllers[index].text
+                                      ? Colors.white
+                                      : Colors.black,
                             ),
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: targetTexts[index] == controllers[index].text ? Colors.green : Colors.white,
+                              fillColor:
+                                  targetTexts[index] == controllers[index].text
+                                      ? Colors.green
+                                      : Colors.white,
                               counterText: '',
                               border: OutlineInputBorder(),
                             ),
@@ -180,12 +266,12 @@ class _SagadaState extends State<Sagada> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                     firstbutton.length,
-                        (index) => Padding(
+                    (index) => Padding(
                       padding: EdgeInsets.symmetric(horizontal: 6),
                       child: ElevatedButton(
                         onPressed: () {
@@ -216,7 +302,7 @@ class _SagadaState extends State<Sagada> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
                     secondbutton.length,
-                        (index) => Padding(
+                    (index) => Padding(
                       padding: EdgeInsets.symmetric(horizontal: 6),
                       child: ElevatedButton(
                         onPressed: () {
@@ -237,161 +323,6 @@ class _SagadaState extends State<Sagada> {
                             fontSize: 16,
                             color: Colors.white,
                           ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 10),
-                Container(
-                  width: 200,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    gradient: isAnswerCorrect()
-                        ? LinearGradient(
-                      colors: [Colors.green, Colors.lightGreen],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    )
-                        : LinearGradient(
-                      colors: [Colors.red, Colors.pink],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child:
-                  ElevatedButton(
-                    onPressed: () {
-                      if (isAnswerCorrect()) {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Text('WELL DONE!'),
-                              content: Column(
-                                children: [
-                                  Image.asset('assets/image/sagada.jpg'), // Replace 'assets/image/mayon.jpg' with the actual image path
-                                  Text(
-                                    '\nSagada is a town in the Cordillera Mountains, '
-                                        'within the Philippines’ Mountain Province. '
-                                        'Echo Valley’s hanging coffins are displayed '
-                                        'high on cliffs, while centuries-old coffins are '
-                                        'stacked in burial sites like Lumiang Cave. '
-                                        'The nearby Sumaguing Cave has unusual limestone '
-                                        'formations.',
-                                  ),
-                                ],
-                              ),
-                              backgroundColor: Colors.greenAccent, // Set the background color to green
-                              actions: [
-                                Align(
-                                  alignment: Alignment.topCenter,
-                                  child: TextButton(
-                                    child: Text(
-                                      'NEXT',
-                                      style: TextStyle(
-                                        fontSize: 50,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => Basco()),
-                                      );
-                                    },
-                                    style: ButtonStyle(
-                                      side: MaterialStateProperty.all(
-                                        BorderSide(
-                                          color: Colors.black,
-                                          width: 1.0,
-                                        ),
-                                      ),
-                                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                                      padding: MaterialStateProperty.all(EdgeInsets.all(10)),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                      } else {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Dialog(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              backgroundColor: Colors.red,
-                              child: Container(
-                                padding: EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      'Incorrect Answer',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text(
-                                      'Oops! Your answer is incorrect.',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    SizedBox(height: 20),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text(
-                                        'OK',
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Colors.red,
-                                        ),
-                                      ),
-                                      style: ElevatedButton.styleFrom(
-                                        primary: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      }
-                    },
-                    child: Text(
-                      'Submit',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                            (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed)) {
-                            return Colors.blue.withOpacity(0.5); // Change the color when the button is pressed
-                          }
-                          return Colors.blue; // Default color
-                        },
-                      ),
-                      padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 10,
                         ),
                       ),
                     ),

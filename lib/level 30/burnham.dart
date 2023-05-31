@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2017/manila.dart';
-import 'package:system/level%2019/underground.dart';
+import 'package:system/level%2029/cantabon.dart';
 
-void main() => runApp(Sampaloc());
+void main() => runApp(Burnham());
 
-class Sampaloc extends StatefulWidget {
+class Burnham extends StatefulWidget {
   @override
-  _SampalocState createState() => _SampalocState();
+  _BurnhamState createState() => _BurnhamState();
 }
 
-class _SampalocState extends State<Sampaloc> {
+class _BurnhamState extends State<Burnham> {
   final List<TextEditingController> controllers = List.generate(
-    12,
+    11,
     (_) => TextEditingController(),
   );
 
@@ -58,13 +57,13 @@ class _SampalocState extends State<Sampaloc> {
               children: [
                 Container(
                   child: Image.asset(
-                    'assets/image/sampaloc.jpg',
+                    'assets/image/burnham.jpg',
                     width: 250,
                     height: 150,
                   ),
                 ),
                 Text(
-                    '''\nSampaloc Lake, situated in San Pablo City, Laguna, Philippines boasts both natural beauty and historical significance. As the largest among the seven lakes in the city, its name, derived from the Tagalog word for tamarind tree, reflects the abundance of these trees that once surrounded its shores.\n\nGroup: Seven Lakes of San Pablo.'''),
+                    '''\nBurnham Park, officially known as the Burnham Park Reservation, is a historic urban park located in downtown Baguio, Philippines. It was designed by eponymous American architect and Baguio city planner, Daniel Burnham.\n\nDesigner: Daniel Burnham.\nFounder: Leonard Wood.\nOwned by: Department of Tourism\nEstablished: August 6, 1925.'''),
               ],
             ),
             actions: [
@@ -72,7 +71,7 @@ class _SampalocState extends State<Sampaloc> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Underground()),
+                    MaterialPageRoute(builder: (context) => Burnham()),
                   );
                 },
                 child: Text('Next'),
@@ -149,35 +148,34 @@ class _SampalocState extends State<Sampaloc> {
   }
 
   List<String> targetTexts = [
-    'S',
+    'B',
+    'U',
+    'R',
+    'N',
+    'H',
     'A',
     'M',
     'P',
     'A',
-    'L',
-    'O',
-    'C',
-    'L',
-    'A',
-    'K',
-    'E'
+    'R',
+    'K'
   ];
   List<String> buttonLetters = [
-    'C',
+    'B',
     'U',
     'N',
     'A',
     'O',
     'R',
     'I',
-    'L',
+    'C',
     'E',
-    'V',
+    'M',
     'P',
     'S',
-    'K',
+    'H',
     'L',
-    'M'
+    'K'
   ];
 
   bool isSubmitClicked = false;
@@ -193,7 +191,7 @@ class _SampalocState extends State<Sampaloc> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 18',
+      title: 'Level 30',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -201,14 +199,14 @@ class _SampalocState extends State<Sampaloc> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Manila()),
+                MaterialPageRoute(builder: (context) => Cantabon()),
               );
             },
           ),
           centerTitle: true,
           title: Center(
             child: Text(
-              'Level 18',
+              'Level 30',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -227,7 +225,7 @@ class _SampalocState extends State<Sampaloc> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Located in San Pablo City Laguna.',
+                            'Hint',
                           ),
                           actions: [
                             ElevatedButton(
@@ -257,8 +255,8 @@ class _SampalocState extends State<Sampaloc> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/sampaloc.jpg',
-                width: 350,
+                'assets/image/burnham.jpg',
+                width: 380,
                 height: 230,
               ),
             ),
@@ -268,7 +266,7 @@ class _SampalocState extends State<Sampaloc> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < 7; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -307,9 +305,9 @@ class _SampalocState extends State<Sampaloc> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 8; i < 12; i++)
+                    for (int i = 7; i < 11; i++)
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4),
+                        padding: EdgeInsets.symmetric(horizontal: 3),
                         child: GestureDetector(
                           onTap: () {
                             if (controllers[i].text.isNotEmpty) {
@@ -317,7 +315,7 @@ class _SampalocState extends State<Sampaloc> {
                             }
                           },
                           child: Container(
-                            width: 40,
+                            width: 37,
                             child: TextField(
                               controller: controllers[i],
                               enabled: false,

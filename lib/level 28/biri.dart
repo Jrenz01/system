@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2017/manila.dart';
-import 'package:system/level%2019/underground.dart';
+import 'package:system/level%2027/basco.dart';
+import 'package:system/level%2029/cantabon.dart';
 
-void main() => runApp(Sampaloc());
+void main() => runApp(Biri());
 
-class Sampaloc extends StatefulWidget {
+class Biri extends StatefulWidget {
   @override
-  _SampalocState createState() => _SampalocState();
+  _BiriState createState() => _BiriState();
 }
 
-class _SampalocState extends State<Sampaloc> {
+class _BiriState extends State<Biri> {
   final List<TextEditingController> controllers = List.generate(
-    12,
+    10,
     (_) => TextEditingController(),
   );
 
@@ -58,13 +58,13 @@ class _SampalocState extends State<Sampaloc> {
               children: [
                 Container(
                   child: Image.asset(
-                    'assets/image/sampaloc.jpg',
+                    'assets/image/biri.JPG',
                     width: 250,
                     height: 150,
                   ),
                 ),
                 Text(
-                    '''\nSampaloc Lake, situated in San Pablo City, Laguna, Philippines boasts both natural beauty and historical significance. As the largest among the seven lakes in the city, its name, derived from the Tagalog word for tamarind tree, reflects the abundance of these trees that once surrounded its shores.\n\nGroup: Seven Lakes of San Pablo.'''),
+                    '''\nBiri, officially the Municipality of Biri, is a 5th class municipality in the province of Northern Samar, Philippines. According to the 2020 census, it has a population of 11,274 people. The archipelagic town is also known for its inakob, a traditional Waray dish made by first cooking grated root crops (gabi) with coconut milk, condensed milk, eggs, brown sugar, and an herb called anuv.'''),
               ],
             ),
             actions: [
@@ -72,7 +72,7 @@ class _SampalocState extends State<Sampaloc> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Underground()),
+                    MaterialPageRoute(builder: (context) => Cantabon()),
                   );
                 },
                 child: Text('Next'),
@@ -148,36 +148,23 @@ class _SampalocState extends State<Sampaloc> {
     return true;
   }
 
-  List<String> targetTexts = [
-    'S',
-    'A',
-    'M',
-    'P',
-    'A',
-    'L',
-    'O',
-    'C',
-    'L',
-    'A',
-    'K',
-    'E'
-  ];
+  List<String> targetTexts = ['B', 'I', 'R', 'I', 'I', 'S', 'L', 'A', 'N', 'D'];
   List<String> buttonLetters = [
-    'C',
+    'B',
     'U',
     'N',
     'A',
     'O',
     'R',
     'I',
-    'L',
+    'C',
     'E',
     'V',
     'P',
     'S',
-    'K',
+    'Y',
     'L',
-    'M'
+    'D'
   ];
 
   bool isSubmitClicked = false;
@@ -193,7 +180,7 @@ class _SampalocState extends State<Sampaloc> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Level 18',
+      title: 'Level 28',
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -201,14 +188,14 @@ class _SampalocState extends State<Sampaloc> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Manila()),
+                MaterialPageRoute(builder: (context) => Basco()),
               );
             },
           ),
           centerTitle: true,
           title: Center(
             child: Text(
-              'Level 18',
+              'Level 28',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -227,7 +214,7 @@ class _SampalocState extends State<Sampaloc> {
                         return AlertDialog(
                           title: Text('Hint'),
                           content: Text(
-                            'Located in San Pablo City Laguna.',
+                            'Hint',
                           ),
                           actions: [
                             ElevatedButton(
@@ -257,8 +244,8 @@ class _SampalocState extends State<Sampaloc> {
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
-                'assets/image/sampaloc.jpg',
-                width: 350,
+                'assets/image/biri.JPG',
+                width: 380,
                 height: 230,
               ),
             ),
@@ -268,7 +255,7 @@ class _SampalocState extends State<Sampaloc> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < 4; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(
@@ -307,7 +294,7 @@ class _SampalocState extends State<Sampaloc> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (int i = 8; i < 12; i++)
+                    for (int i = 4; i < 10; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 4),
                         child: GestureDetector(

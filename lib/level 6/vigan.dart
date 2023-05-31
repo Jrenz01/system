@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:system/home.dart';
+import 'package:system/level%205/intramuros.dart';
 import 'package:system/level%207/magellan.dart';
-
 
 void main() => runApp(Vigan());
 
@@ -13,14 +12,15 @@ class Vigan extends StatefulWidget {
 class _ViganState extends State<Vigan> {
   final List<TextEditingController> controllers = List.generate(
     9,
-        (_) => TextEditingController(),
+    (_) => TextEditingController(),
   );
 
   int currentTextBoxIndex = 0;
   int clearedTextBoxCount = 0;
 
   void updateCurrentTextBox(String text) {
-    if (currentTextBoxIndex < controllers.length && controllers[currentTextBoxIndex].text.isEmpty) {
+    if (currentTextBoxIndex < controllers.length &&
+        controllers[currentTextBoxIndex].text.isEmpty) {
       controllers[currentTextBoxIndex].text = text;
       currentTextBoxIndex++;
       if (clearedTextBoxCount >= 3) {
@@ -40,6 +40,86 @@ class _ViganState extends State<Vigan> {
           break;
         }
       }
+    }
+    if (isAnswerCorrect()) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.symmetric(vertical: 120, horizontal: 10),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Center(
+              child: Text(
+                'Well Done!',
+              ),
+            ),
+            content: Column(
+              children: [
+                Container(
+                  child: Image.asset(
+                    'assets/image/vigan.png',
+                    width: 250,
+                    height: 150,
+                  ),
+                ),
+                Text(
+                    '''\nVigan City is a historic city located in the province of Ilocos Sur, in the northern part of the Philippines. The city is known for its well-preserved Spanish colonial and Asian architecture, including its famous cobblestone streets, old houses, and the Vigan Cathedral. The citys architecture is a blend of European and Asian styles.\n\nFounded: 1572.'''),
+              ],
+            ),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Magellan()),
+                  );
+                },
+                child: Text('Next'),
+              ),
+            ],
+          );
+        },
+      );
+    } else if (currentTextBoxIndex >= controllers.length) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+            title: Text('Incorrect Answer'),
+            content: Column(
+              children: [
+                Text(
+                  'Oops! Your answer is incorrect.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+            backgroundColor:
+                Colors.redAccent, // Set the background color to red
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  'OK',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+      );
     }
   }
 
@@ -68,17 +148,7 @@ class _ViganState extends State<Vigan> {
     return true;
   }
 
-  List<String> targetTexts = [
-    'V',
-    'I',
-    'G',
-    'A',
-    'N',
-    'C',
-    'I',
-    'T',
-    'Y'
-  ];
+  List<String> targetTexts = ['V', 'I', 'G', 'A', 'N', 'C', 'I', 'T', 'Y'];
   List<String> buttonLetters = [
     'T',
     'U',
@@ -110,7 +180,7 @@ class _ViganState extends State<Vigan> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Home()),
+                MaterialPageRoute(builder: (context) => Intramuros()),
               );
             },
           ),
@@ -160,7 +230,7 @@ class _ViganState extends State<Vigan> {
         backgroundColor: Colors.lightBlue[100],
         body: Column(
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 40),
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
@@ -169,15 +239,15 @@ class _ViganState extends State<Vigan> {
                 height: 230,
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 40),
             Column(
               children: [
                 Wrap(
                   alignment: WrapAlignment.center,
                   children: List.generate(
                     9,
-                        (index) => Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                    (index) => Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 3),
                       child: GestureDetector(
                         onTap: () {
                           if (controllers[index].text.isNotEmpty) {
@@ -185,31 +255,34 @@ class _ViganState extends State<Vigan> {
                           }
                         },
                         child: Container(
-                          width: 50,
+                          width: 37,
                           child: TextField(
                             controller: controllers[index],
                             enabled: false,
                             textAlign: TextAlign.center,
                             maxLength: 10,
                             style: TextStyle(
-                              color: targetTexts[index] == controllers[index].text
-                                  ? Colors.white
-                                  : Colors.black,
+                              color:
+                                  targetTexts[index] == controllers[index].text
+                                      ? Colors.white
+                                      : Colors.black,
                             ),
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: targetTexts[index] == controllers[index].text
-                                  ? Colors.green
-                                  : Colors.white,
+                              fillColor:
+                                  targetTexts[index] == controllers[index].text
+                                      ? Colors.green
+                                      : Colors.white,
                               counterText: '',
                               border: OutlineInputBorder(),
                             ),
-                          ),                        ),
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 40),
                 Column(
                   children: [
                     Row(
@@ -304,159 +377,6 @@ class _ViganState extends State<Vigan> {
                     ),
                   ],
                 ),
-                Container(
-                  width: 200,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    gradient: isAnswerCorrect()
-                        ? LinearGradient(
-                      colors: [Colors.green, Colors.lightGreen],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    )
-                        : LinearGradient(
-                      colors: [Colors.red, Colors.pink],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (isAnswerCorrect()) {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Text('WELL DONE!'),
-                              content: Column(
-                                children: [
-                                  Image.asset('assets/image/vigan.png'), // Replace 'assets/image/mayon.jpg' with the actual image path
-                                  Text(
-                                    '\nVigan City is a historic city located in the province of Ilocos Sur, '
-                                        'in the northern part of the Philippines. '
-                                        'The city is known for its well-preserved Spanish colonial and '
-                                        'Asian architecture, including its famous cobblestone streets, '
-                                        'old houses, and the Vigan Cathedral. The citys architecture is '
-                                        'a blend of European and Asian styles, and is a testament to its '
-                                        'rich cultural heritage and history.',
-                                  ),
-                                ],
-                              ),
-                              backgroundColor: Colors.greenAccent, // Set the background color to green
-                              actions: [
-                                Align(
-                                  alignment: Alignment.topCenter,
-                                  child: TextButton(
-                                    child: Text(
-                                      'NEXT',
-                                      style: TextStyle(
-                                        fontSize: 50,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => Magellan()),
-                                      );
-                                    },
-                                    style: ButtonStyle(
-                                      side: MaterialStateProperty.all(
-                                        BorderSide(
-                                          color: Colors.black,
-                                          width: 1.0,
-                                        ),
-                                      ),
-                                      backgroundColor: MaterialStateProperty.all(Colors.white),
-                                      padding: MaterialStateProperty.all(EdgeInsets.all(10)),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                      } else {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Dialog(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              backgroundColor: Colors.red,
-                              child: Container(
-                                padding: EdgeInsets.all(16.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      'Incorrect Answer',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text(
-                                      'Oops! Your answer is incorrect.',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    SizedBox(height: 20),
-                                    ElevatedButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text(
-                                        'OK',
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Colors.red,
-                                        ),
-                                      ),
-                                      style: ElevatedButton.styleFrom(
-                                        primary: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      }
-                    },
-                    child: Text(
-                      'Submit',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                            (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed)) {
-                            return Colors.blue.withOpacity(0.5); // Change the color when the button is pressed
-                          }
-                          return Colors.blue; // Default color
-                        },
-                      ),
-                      padding: MaterialStateProperty.all<EdgeInsets>(
-                        EdgeInsets.symmetric(
-                          horizontal: 20,
-                          vertical: 10,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               ],
             ),
           ],
@@ -465,4 +385,3 @@ class _ViganState extends State<Vigan> {
     );
   }
 }
-

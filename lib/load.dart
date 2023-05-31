@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2014/aguinaldo.dart';
-import 'package:system/level%208/baguio.dart';
-import 'package:system/level%2025/bangui.dart';
-import 'package:system/level%2027/basco.dart';
-import 'package:system/biri.dart';
-import 'package:system/level%2015/boracay.dart';
-import 'package:system/level%203/chocolatehills.dart';
-import 'package:system/level%2021/corregidor.dart';
-import 'package:system/level%2024/enchanted.dart';
-import 'package:system/level%2016/fort.dart';
 import 'package:system/home.dart';
-import 'package:system/level%2011/hundred.dart';
-import 'package:system/level%205/intramuros.dart';
-import 'package:system/level%204/luneta.dart';
-import 'package:system/level%2013/mactan.dart';
-import 'package:system/level%207/magellan.dart';
-import 'package:system/level%2010/malacanang.dart';
-import 'package:system/level%2017/manila.dart';
 import 'package:system/level%201/mayon.dart';
+import 'package:system/level%2010/malacanang.dart';
+import 'package:system/level%2011/hundred.dart';
+import 'package:system/level%2012/sanjuanico.dart';
+import 'package:system/level%2013/mactan.dart';
+import 'package:system/level%2014/aguinaldo.dart';
+import 'package:system/level%2015/boracay.dart';
+import 'package:system/level%2016/fort.dart';
+import 'package:system/level%2017/manila.dart';
+import 'package:system/level%2018/sampaloc.dart';
+import 'package:system/level%2019/underground.dart';
 import 'package:system/level%202/banaue.dart';
 import 'package:system/level%2020/quiapo.dart';
-import 'package:system/level%2026/sagada.dart';
-import 'package:system/level%2018/sampaloc.dart';
+import 'package:system/level%2021/corregidor.dart';
 import 'package:system/level%2022/sanagustin.dart';
-import 'package:system/level%2012/sanjuanico.dart';
-import 'package:system/level%209/taal.dart';
 import 'package:system/level%2023/tagaytay.dart';
-import 'package:system/level%2019/underground.dart';
+import 'package:system/level%2024/enchanted.dart';
+import 'package:system/level%2025/bangui.dart';
+import 'package:system/level%2026/sagada.dart';
+import 'package:system/level%2027/basco.dart';
+import 'package:system/level%2028/biri.dart';
+import 'package:system/level%2029/cantabon.dart';
+import 'package:system/level%203/chocolatehills.dart';
+import 'package:system/level%2030/burnham.dart';
+import 'package:system/level%204/luneta.dart';
+import 'package:system/level%205/intramuros.dart';
 import 'package:system/level%206/vigan.dart';
+import 'package:system/level%207/magellan.dart';
+import 'package:system/level%208/baguio.dart';
+import 'package:system/level%209/taal.dart';
 
 void main() => runApp(Load());
 
@@ -117,7 +119,8 @@ class LevelListScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Malacanang()),
-                );} else if (level == 11) {
+                );
+              } else if (level == 11) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Hundred()),
@@ -146,7 +149,8 @@ class LevelListScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Fort()),
-                );} else if (level == 17) {
+                );
+              } else if (level == 17) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Manila()),
@@ -205,6 +209,16 @@ class LevelListScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Biri()),
+                );
+              } else if (level == 29) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Cantabon()),
+                );
+              } else if (level == 30) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Burnham()),
                 );
               } else {
                 // Handle other levels here
