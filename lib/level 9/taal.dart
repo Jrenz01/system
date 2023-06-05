@@ -54,18 +54,26 @@ class _TaalState extends State<Taal> {
                 'Well Done!',
               ),
             ),
-            content: Column(
-              children: [
-                Container(
-                  child: Image.asset(
-                    'assets/image/taal.png',
-                    width: 250,
-                    height: 150,
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: Image.asset(
+                      'assets/image/taal.png',
+                      width: 250,
+                      height: 150,
+                    ),
                   ),
-                ),
-                Text(
-                    '''\nTaal Volcano is an active volcano located on the island of Luzon, in the province of Batangas, Philippines. It is known for its picturesque crater lake, which contains another small volcanic island called Vulcan Point. Taal Volcano is considered one of the worlds smallest active volcanoes, standing at only 311 meters tall.\n\nLocation: Talisay and San Nicolas, Batangas.\nEruptions: 38 historical eruptions.'''),
-              ],
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '''\nTaal Volcano is an active volcano located on the island of Luzon, in the province of Batangas, Philippines. It is known for its picturesque crater lake, which contains another small volcanic island called Vulcan Point. Taal Volcano is considered one of the world's smallest active volcanoes, standing at only 311 meters tall.\n\nLocation: Talisay and San Nicolas, Batangas.\nEruptions: 38 historical eruptions.''',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             actions: [
               ElevatedButton(
@@ -75,7 +83,15 @@ class _TaalState extends State<Taal> {
                     MaterialPageRoute(builder: (context) => Malacanang()),
                   );
                 },
-                child: Text('Next'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green, // Customize button color
+                ),
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
               ),
             ],
           );
@@ -89,13 +105,19 @@ class _TaalState extends State<Taal> {
             insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            title: Text('Incorrect Answer'),
+            title: Text(
+              'Incorrect Answer',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
+            ),
             content: Column(
               children: [
                 Text(
                   'Oops! Your answer is incorrect.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 17,
                     color: Colors.white,
                   ),
                 ),
@@ -108,11 +130,14 @@ class _TaalState extends State<Taal> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // Customize button color
+                ),
                 child: Text(
                   'OK',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -214,16 +239,37 @@ class _TaalState extends State<Taal> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Hint'),
+                          title: Text(
+                            'Hint',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                           content: Text(
                             'Hint',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
                           ),
+                          backgroundColor: Colors.black54,
                           actions: [
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text('OK'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    Colors.white, // Customize button color
+                              ),
+                              child: Text(
+                                'OK',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ],
                         );
@@ -349,7 +395,7 @@ class _TaalState extends State<Taal> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
+                            backgroundColor: Colors.black54,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                           ),
@@ -377,7 +423,7 @@ class _TaalState extends State<Taal> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
+                            backgroundColor: Colors.black54,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                           ),
@@ -405,7 +451,7 @@ class _TaalState extends State<Taal> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
+                            backgroundColor: Colors.black54,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                           ),

@@ -54,18 +54,26 @@ class _BoracayState extends State<Boracay> {
                 'Well Done!',
               ),
             ),
-            content: Column(
-              children: [
-                Container(
-                  child: Image.asset(
-                    'assets/image/boracay.jpg',
-                    width: 250,
-                    height: 150,
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: Image.asset(
+                      'assets/image/boracay.jpg',
+                      width: 250,
+                      height: 150,
+                    ),
                   ),
-                ),
-                Text(
-                    '''\nBoracay is a resort island in the Western Visayas region of the Philippines, located 0.8 kilometers (0.50 mi) off the northwest coast of Panay. It has a total land area of 10.32 square kilometers (3.98 sq mi), under the jurisdiction of three barangays in Malay, Aklan, and had a population of 37,802 in 2020.Boracay was originally inhabited by the Tumandok and Ati people.'''),
-              ],
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '''\nBoracay is a resort island in the Western Visayas region of the Philippines, located 0.8 kilometers (0.50 mi) off the northwest coast of Panay. It has a total land area of 10.32 square kilometers (3.98 sq mi), under the jurisdiction of three barangays in Malay, Aklan, and had a population of 37,802 in 2020. Boracay was originally inhabited by the Tumandok and Ati people.''',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             actions: [
               ElevatedButton(
@@ -75,7 +83,15 @@ class _BoracayState extends State<Boracay> {
                     MaterialPageRoute(builder: (context) => Fort()),
                   );
                 },
-                child: Text('Next'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green, // Customize button color
+                ),
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
               ),
             ],
           );
@@ -89,13 +105,19 @@ class _BoracayState extends State<Boracay> {
             insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            title: Text('Incorrect Answer'),
+            title: Text(
+              'Incorrect Answer',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
+            ),
             content: Column(
               children: [
                 Text(
                   'Oops! Your answer is incorrect.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 17,
                     color: Colors.white,
                   ),
                 ),
@@ -108,11 +130,14 @@ class _BoracayState extends State<Boracay> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // Customize button color
+                ),
                 child: Text(
                   'OK',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -185,16 +210,37 @@ class _BoracayState extends State<Boracay> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Hint'),
+                          title: Text(
+                            'Hint',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                           content: Text(
                             'Hint',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
                           ),
+                          backgroundColor: Colors.black54,
                           actions: [
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text('OK'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    Colors.white, // Customize button color
+                              ),
+                              child: Text(
+                                'OK',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ],
                         );
@@ -280,7 +326,7 @@ class _BoracayState extends State<Boracay> {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          backgroundColor: Colors.black54,
                           padding: EdgeInsets.symmetric(
                             horizontal: 20,
                             vertical: 10,
@@ -311,7 +357,7 @@ class _BoracayState extends State<Boracay> {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          backgroundColor: Colors.black54,
                           padding: EdgeInsets.symmetric(
                             horizontal: 20,
                             vertical: 10,

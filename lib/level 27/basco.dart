@@ -54,18 +54,26 @@ class _BascoState extends State<Basco> {
                 'Well Done!',
               ),
             ),
-            content: Column(
-              children: [
-                Container(
-                  child: Image.asset(
-                    'assets/image/basco.jpeg',
-                    width: 250,
-                    height: 150,
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: Image.asset(
+                      'assets/image/basco.jpeg',
+                      width: 250,
+                      height: 150,
+                    ),
                   ),
-                ),
-                Text(
-                    '''\nBasco Lighthouse is a lighthouse in the town of Basco in Batanes, the northernmost province in the Philippines. Located in Naidi Hills in Barangay San Antonio, the lush green hills and the open sea provide a beautiful backdrop for the lighthouse. The place can easily be reached by a 1.2-km (3/4 mile) hike from the Port of Basco.\n\nConstructed: 2003.'''),
-              ],
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '''\nBasco Lighthouse is a lighthouse in the town of Basco in Batanes, the northernmost province in the Philippines. Located in Naidi Hills in Barangay San Antonio, the lush green hills and the open sea provide a beautiful backdrop for the lighthouse. The place can easily be reached by a 1.2-km (3/4 mile) hike from the Port of Basco.\n\nConstructed: 2003.''',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             actions: [
               ElevatedButton(
@@ -75,7 +83,15 @@ class _BascoState extends State<Basco> {
                     MaterialPageRoute(builder: (context) => Biri()),
                   );
                 },
-                child: Text('Next'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green, // Customize button color
+                ),
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
               ),
             ],
           );
@@ -89,13 +105,19 @@ class _BascoState extends State<Basco> {
             insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            title: Text('Incorrect Answer'),
+            title: Text(
+              'Incorrect Answer',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
+            ),
             content: Column(
               children: [
                 Text(
                   'Oops! Your answer is incorrect.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 17,
                     color: Colors.white,
                   ),
                 ),
@@ -108,11 +130,14 @@ class _BascoState extends State<Basco> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // Customize button color
+                ),
                 child: Text(
                   'OK',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -228,16 +253,37 @@ class _BascoState extends State<Basco> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Hint'),
+                          title: Text(
+                            'Hint',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                           content: Text(
                             'Hint.',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
                           ),
+                          backgroundColor: Colors.black54,
                           actions: [
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text('OK'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    Colors.white, // Customize button color
+                              ),
+                              child: Text(
+                                'OK',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ],
                         );
@@ -363,7 +409,7 @@ class _BascoState extends State<Basco> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
+                            backgroundColor: Colors.black54,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                           ),
@@ -391,7 +437,7 @@ class _BascoState extends State<Basco> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
+                            backgroundColor: Colors.black54,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                           ),
@@ -419,7 +465,7 @@ class _BascoState extends State<Basco> {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
+                            backgroundColor: Colors.black54,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
                           ),

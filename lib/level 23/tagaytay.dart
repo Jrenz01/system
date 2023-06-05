@@ -54,18 +54,26 @@ class _TagaytayState extends State<Tagaytay> {
                 'Well Done!',
               ),
             ),
-            content: Column(
-              children: [
-                Container(
-                  child: Image.asset(
-                    'assets/image/tagaytay.JPG',
-                    width: 250,
-                    height: 150,
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: Image.asset(
+                      'assets/image/tagaytay.JPG',
+                      width: 250,
+                      height: 150,
+                    ),
                   ),
-                ),
-                Text(
-                    '''\nTagaytay, officially the City of Tagaytay, is a 2nd class component city in the province of Cavite, Philippines. According to the 2020 census, it has a population of 85,330 people. Tagaytay overlooks Taal Lake in Batangas and provides views of Taal Volcano Island in the middle of the lake through various vantage points situated in the city.\n\nFeast date: February 11.'''),
-              ],
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '''\nTagaytay, officially the City of Tagaytay, is a 2nd class component city in the province of Cavite, Philippines. According to the 2020 census, it has a population of 85,330 people. Tagaytay overlooks Taal Lake in Batangas and provides views of Taal Volcano Island in the middle of the lake through various vantage points situated in the city.\n\nFeast date: February 11.''',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             actions: [
               ElevatedButton(
@@ -75,7 +83,15 @@ class _TagaytayState extends State<Tagaytay> {
                     MaterialPageRoute(builder: (context) => Enchanted()),
                   );
                 },
-                child: Text('Next'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green, // Customize button color
+                ),
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
               ),
             ],
           );
@@ -89,13 +105,19 @@ class _TagaytayState extends State<Tagaytay> {
             insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            title: Text('Incorrect Answer'),
+            title: Text(
+              'Incorrect Answer',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
+            ),
             content: Column(
               children: [
                 Text(
                   'Oops! Your answer is incorrect.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 17,
                     color: Colors.white,
                   ),
                 ),
@@ -108,11 +130,14 @@ class _TagaytayState extends State<Tagaytay> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // Customize button color
+                ),
                 child: Text(
                   'OK',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -202,16 +227,37 @@ class _TagaytayState extends State<Tagaytay> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Hint'),
+                          title: Text(
+                            'Hint',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                           content: Text(
                             'Hint.',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
                           ),
+                          backgroundColor: Colors.black54,
                           actions: [
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text('OK'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    Colors.white, // Customize button color
+                              ),
+                              child: Text(
+                                'OK',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ],
                         );
@@ -298,7 +344,7 @@ class _TagaytayState extends State<Tagaytay> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
@@ -328,7 +374,7 @@ class _TagaytayState extends State<Tagaytay> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
@@ -358,7 +404,7 @@ class _TagaytayState extends State<Tagaytay> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,

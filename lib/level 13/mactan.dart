@@ -54,18 +54,26 @@ class _MactanState extends State<Mactan> {
                 'Well Done!',
               ),
             ),
-            content: Column(
-              children: [
-                Container(
-                  child: Image.asset(
-                    'assets/image/mactan.png',
-                    width: 250,
-                    height: 150,
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: Image.asset(
+                      'assets/image/mactan.png',
+                      width: 250,
+                      height: 150,
+                    ),
                   ),
-                ),
-                Text(
-                    '''\nThe Mactan Shrine is a monument located in Lapu-Lapu City, Cebu, Philippines, dedicated to the Battle of Mactan, which occurred on April 27, 1521. It commemorates the bravery of Lapu-Lapu, a native chieftain who led his warriors to victory over the Spanish forces led by the Portuguese explorer Ferdinand Magellan.\n\nEstablished: 1969 (as a national shrine).\n'''),
-              ],
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '''\nThe Mactan Shrine is a monument located in Lapu-Lapu City, Cebu, Philippines, dedicated to the Battle of Mactan, which occurred on April 27, 1521. It commemorates the bravery of Lapu-Lapu, a native chieftain who led his warriors to victory over the Spanish forces led by the Portuguese explorer Ferdinand Magellan.\n\nEstablished: 1969 (as a national shrine).\n''',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             actions: [
               ElevatedButton(
@@ -75,7 +83,15 @@ class _MactanState extends State<Mactan> {
                     MaterialPageRoute(builder: (context) => Aguinaldo()),
                   );
                 },
-                child: Text('Next'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green, // Customize button color
+                ),
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
               ),
             ],
           );
@@ -89,13 +105,19 @@ class _MactanState extends State<Mactan> {
             insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            title: Text('Incorrect Answer'),
+            title: Text(
+              'Incorrect Answer',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
+            ),
             content: Column(
               children: [
                 Text(
                   'Oops! Your answer is incorrect.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 17,
                     color: Colors.white,
                   ),
                 ),
@@ -108,11 +130,14 @@ class _MactanState extends State<Mactan> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // Customize button color
+                ),
                 child: Text(
                   'OK',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -215,16 +240,37 @@ class _MactanState extends State<Mactan> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Hint'),
+                          title: Text(
+                            'Hint',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                           content: Text(
                             'Hint',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
                           ),
+                          backgroundColor: Colors.black54,
                           actions: [
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text('OK'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    Colors.white, // Customize button color
+                              ),
+                              child: Text(
+                                'OK',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ],
                         );
@@ -243,7 +289,7 @@ class _MactanState extends State<Mactan> {
         backgroundColor: Colors.lightBlue[100],
         body: Column(
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 40),
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
@@ -252,7 +298,7 @@ class _MactanState extends State<Mactan> {
                 height: 250,
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 40),
             Column(
               children: [
                 Wrap(
@@ -295,7 +341,7 @@ class _MactanState extends State<Mactan> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 40),
                 Column(
                   children: [
                     Row(
@@ -311,7 +357,7 @@ class _MactanState extends State<Mactan> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
@@ -341,7 +387,7 @@ class _MactanState extends State<Mactan> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
@@ -371,7 +417,7 @@ class _MactanState extends State<Mactan> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,

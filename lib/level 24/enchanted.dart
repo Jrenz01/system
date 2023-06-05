@@ -54,18 +54,26 @@ class _EnchantedState extends State<Enchanted> {
                 'Well Done!',
               ),
             ),
-            content: Column(
-              children: [
-                Container(
-                  child: Image.asset(
-                    'assets/image/enchanted.jpg',
-                    width: 250,
-                    height: 150,
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: Image.asset(
+                      'assets/image/enchanted.jpg',
+                      width: 250,
+                      height: 150,
+                    ),
                   ),
-                ),
-                Text(
-                    '''\nEnchanted Kingdom (abbreviated as EK), is a theme park in the Philippines. It is located in Santa Rosa, Laguna. It has a land area of 25 hectares (62 acres). The park is managed and operated by Enchanted Kingdom Inc.Enchanted Kingdom is a member of the International Association of Amusement Parks and Attractions (IAAPA).\n\nOpened: June 1995.\nOwner: Enchanted Kingdom, Inc.'''),
-              ],
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '''\nEnchanted Kingdom (abbreviated as EK), is a theme park in the Philippines. It is located in Santa Rosa, Laguna. It has a land area of 25 hectares (62 acres). The park is managed and operated by Enchanted Kingdom Inc.Enchanted Kingdom is a member of the International Association of Amusement Parks and Attractions (IAAPA).\n\nOpened: June 1995.\nOwner: Enchanted Kingdom, Inc.''',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             actions: [
               ElevatedButton(
@@ -75,7 +83,15 @@ class _EnchantedState extends State<Enchanted> {
                     MaterialPageRoute(builder: (context) => Bangui()),
                   );
                 },
-                child: Text('Next'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green, // Customize button color
+                ),
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
               ),
             ],
           );
@@ -89,13 +105,19 @@ class _EnchantedState extends State<Enchanted> {
             insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            title: Text('Incorrect Answer'),
+            title: Text(
+              'Incorrect Answer',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
+            ),
             content: Column(
               children: [
                 Text(
                   'Oops! Your answer is incorrect.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 17,
                     color: Colors.white,
                   ),
                 ),
@@ -108,11 +130,14 @@ class _EnchantedState extends State<Enchanted> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // Customize button color
+                ),
                 child: Text(
                   'OK',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -219,16 +244,37 @@ class _EnchantedState extends State<Enchanted> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Hint'),
+                          title: Text(
+                            'Hint',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                           content: Text(
                             'Hint.',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
                           ),
+                          backgroundColor: Colors.black54,
                           actions: [
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text('OK'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    Colors.white, // Customize button color
+                              ),
+                              child: Text(
+                                'OK',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ],
                         );
@@ -315,7 +361,7 @@ class _EnchantedState extends State<Enchanted> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
@@ -345,7 +391,7 @@ class _EnchantedState extends State<Enchanted> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
@@ -375,7 +421,7 @@ class _EnchantedState extends State<Enchanted> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,

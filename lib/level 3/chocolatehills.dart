@@ -54,18 +54,24 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                 'Well Done!',
               ),
             ),
-            content: Column(
-              children: [
-                Container(
-                  child: Image.asset(
-                    'assets/image/banaue.jpg',
-                    width: 250,
-                    height: 150,
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    child: Image.asset(
+                      'assets/image/chocolatehills.png',
+                      width: 250,
+                      height: 150,
+                    ),
                   ),
-                ),
-                Text(
-                    '''\nThe Chocolate Hills are a geological formation. The hills consist of around 1,200 to 1,700 individual mounds that are mostly symmetrical and conical in shape, and are covered in grass that turns brown during the dry season, giving them the appearance of chocolate mounds.\n\nEstablished: June 18, 1988.\nLocation: Bohol Province.\nRock Age: Late Pliocene to Early Pleistocene.'''),
-              ],
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      '''\nThe Chocolate Hills are a geological formation. The hills consist of around 1,200 to 1,700 individual mounds that are mostly symmetrical and conical in shape, and are covered in grass that turns brown during the dry season, giving them the appearance of chocolate mounds.\n\nEstablished: June 18, 1988.\nLocation: Bohol Province.\nRock Age: Late Pliocene to Early Pleistocene.''',
+                    ),
+                  ),
+                ],
+              ),
             ),
             actions: [
               ElevatedButton(
@@ -75,7 +81,15 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                     MaterialPageRoute(builder: (context) => Luneta()),
                   );
                 },
-                child: Text('Next'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green, // Customize button color
+                ),
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
               ),
             ],
           );
@@ -89,13 +103,19 @@ class _ChocolatehillsState extends State<Chocolatehills> {
             insetPadding: EdgeInsets.symmetric(vertical: 280, horizontal: 70),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            title: Text('Incorrect Answer'),
+            title: Text(
+              'Incorrect Answer',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
+            ),
             content: Column(
               children: [
                 Text(
                   'Oops! Your answer is incorrect.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 17,
                     color: Colors.white,
                   ),
                 ),
@@ -108,11 +128,14 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white, // Customize button color
+                ),
                 child: Text(
                   'OK',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -217,16 +240,37 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Hint'),
+                          title: Text(
+                            'Hint',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                           content: Text(
                             'Located in Bohol.',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
                           ),
+                          backgroundColor: Colors.black54,
                           actions: [
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text('OK'),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    Colors.white, // Customize button color
+                              ),
+                              child: Text(
+                                'OK',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ],
                         );
@@ -242,7 +286,7 @@ class _ChocolatehillsState extends State<Chocolatehills> {
             ),
           ],
         ),
-        backgroundColor: Colors.lightBlue[100],
+        backgroundColor: Colors.lightBlueAccent[100],
         body: Column(
           children: [
             SizedBox(height: 40),
@@ -315,7 +359,7 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
@@ -345,7 +389,7 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
@@ -375,7 +419,7 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,
