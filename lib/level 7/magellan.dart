@@ -249,7 +249,7 @@ class _MagellanState extends State<Magellan> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'This historical landmark in the Philippines marks the spot where Ferdinand Magellan planted a cross upon arriving in 1521, symbolizing the introduction of Christianity to the islands',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

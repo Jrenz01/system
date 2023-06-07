@@ -218,7 +218,7 @@ class _BaguioState extends State<Baguio> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'Known as the "Summer Capital of the Philippines," this city is nestled in the mountains and offers a cool climate, picturesque landscapes, and vibrant flower festivals.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

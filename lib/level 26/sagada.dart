@@ -218,7 +218,7 @@ class _SagadaState extends State<Sagada> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'In this unique town nestled in the Cordillera Mountains of the Philippines, discover a fascinating burial tradition that defies gravity. Explore the mysterious Echo Valley and witness the hanging coffins suspended high on cliffs. These centuries-old coffins, stacked in burial sites like Lumiang Cave, offer a glimpse into the rich cultural heritage of the region. Get ready for an adventure that combines history, spirituality, and awe-inspiring natural beauty.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

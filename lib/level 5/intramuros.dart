@@ -244,7 +244,8 @@ class _IntramurosState extends State<Intramuros> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'Explore the ancient walls and immerse yourself in the rich history of this walled city, '
+                            'located within the bustling capital.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

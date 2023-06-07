@@ -218,7 +218,7 @@ class _BoracayState extends State<Boracay> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'This tropical paradise is known for its pristine white sand beaches, crystal-clear turquoise waters, and vibrant nightlife. It is a popular destination for beach lovers and water sports enthusiasts, offering a wide range of activities such as snorkeling, diving, and island hopping. Visitors can enjoy breathtaking sunsets, indulge in delicious seafood, and relax in luxurious resorts.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

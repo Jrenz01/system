@@ -252,7 +252,7 @@ class _SanjuanicoState extends State<Sanjuanico> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'This iconic bridge in the Philippines connects two major islands and is considered one of the longest bridges in the country. It spans across a body of water known for its strong tidal currents and is named after a famous couple in Philippine folklore.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

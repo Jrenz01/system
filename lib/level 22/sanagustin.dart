@@ -252,7 +252,7 @@ class _SanagustinState extends State<Sanagustin> {
                             ),
                           ),
                           content: Text(
-                            'Hint.',
+                            'Step into a UNESCO World Heritage site, a magnificent structure that has withstood the test of time. This church, located in Manila, Philippines, is a testament to Spanish colonial architecture and religious heritage. Admire its intricate details, ornate interiors, and awe-inspiring facade. Discover centuries of history and immerse yourself in the spiritual and cultural significance of this iconic church.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

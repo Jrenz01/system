@@ -252,7 +252,7 @@ class _EnchantedState extends State<Enchanted> {
                             ),
                           ),
                           content: Text(
-                            'Hint.',
+                            'Get ready for a thrilling adventure in this magical theme park located in Santa Rosa, Laguna, Philippines. Experience heart-pounding rides, captivating shows, and exciting attractions for all ages. From roller coasters to water slides, there s something for everyone in this enchanting destination. Don t miss the chance to create unforgettable memories and immerse yourself in a world of fun and fantasy.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

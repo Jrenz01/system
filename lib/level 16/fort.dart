@@ -258,7 +258,7 @@ class _FortState extends State<Fort> {
                             ),
                           ),
                           content: Text(
-                            'Hint.',
+                            'This historical landmark is located in the heart of Manila and served as a military fortress during the Spanish colonial period. It is known for its iconic entrance gate, beautiful gardens, and well-preserved ruins. Within its walls, visitors can explore historical exhibits, walk along the ramparts, and even visit the Rizal Shrine, dedicated to the Philippine national hero, Jose Rizal.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

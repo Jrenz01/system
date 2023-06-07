@@ -248,7 +248,8 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                             ),
                           ),
                           content: Text(
-                            'Located in Bohol.',
+                            'This enchanting landscape is found in the heart of a beautiful island in the Philippines.'
+                            'It is a sight to behold, with countless mounds of uniformly shaped hills stretching as far as the eye can see. During the dry season, these hills take on a unique transformation, resembling hills made of chocolate.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

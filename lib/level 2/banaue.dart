@@ -216,7 +216,9 @@ class _BanaueState extends State<Banaue> {
                             ),
                           ),
                           content: Text(
-                            'It created by the Ifugao people.',
+                            'Its a place that boasts awe-inspiring landscapes and rich cultural heritage. '
+                            'Nestled in the mountains of the Philippines, it is known for its stunning rice terraces that cascade down the slopes.'
+                            'These terraces are a testament to the ingenuity and skill of the indigenous people who carved them out centuries ago.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

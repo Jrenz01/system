@@ -235,7 +235,7 @@ class _TagaytayState extends State<Tagaytay> {
                             ),
                           ),
                           content: Text(
-                            'Hint.',
+                            'Escape to this picturesque city nestled in the highlands of Cavite, Philippines. Marvel at breathtaking views of a famous lake and a volcanic island. Feel the cool breeze and enjoy the serene atmosphere as you explore its scenic attractions. Indulge in delicious cuisine, visit charming gardens, and experience an unforgettable getaway in this popular tourist destination.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

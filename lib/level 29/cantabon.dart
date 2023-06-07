@@ -258,7 +258,8 @@ class _CantabonState extends State<Cantabon> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'C_NTA_ON   '
+                            'C_V_',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

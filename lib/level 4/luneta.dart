@@ -218,7 +218,7 @@ class _LunetaState extends State<Luneta> {
                             ),
                           ),
                           content: Text(
-                            'You will see here the statue of Dr. Jose P. Rizal.',
+                            'This historic park in the heart of the city holds an iconic monument and is a symbol of national pride.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

@@ -240,7 +240,7 @@ class _QuiapoState extends State<Quiapo> {
                             ),
                           ),
                           content: Text(
-                            'Located in Quiapo.',
+                            'Step into the past and explore a centuries-old church nestled in a picturesque town. This church, located in the Philippines, showcases exquisite Baroque architecture adorned with intricate carvings and ornate details. It stands as a testament to the country s rich history and religious heritage. Pay a visit to this cultural gem and immerse yourself in its timeless beauty and spiritual significance.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

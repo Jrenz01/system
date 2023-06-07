@@ -235,7 +235,7 @@ class _CorregidorState extends State<Corregidor> {
                             ),
                           ),
                           content: Text(
-                            'Hint.',
+                            'Journey to a historic island fortress that witnessed significant events during World War II. This island, located in the Philippines, served as a strategic defense post and played a crucial role in the country s history. Explore the remnants of military structures, tunnels, and batteries that stand as testaments to the island s wartime past. Uncover the stories of valor, resilience, and sacrifice as you delve into the fascinating history of this iconic destination.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

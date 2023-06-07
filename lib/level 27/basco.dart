@@ -261,7 +261,7 @@ class _BascoState extends State<Basco> {
                             ),
                           ),
                           content: Text(
-                            'Hint.',
+                            'Located in the northernmost province of the Philippines, this picturesque lighthouse stands tall on Naidi Hills in Basco. It offers breathtaking panoramic views of the lush green hills and the open sea. To reach this iconic landmark, embark on a 1.2-kilometer hike from the Port of Basco. Let the captivating scenery guide your way as you discover the beauty of this enchanting destination.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

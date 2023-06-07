@@ -250,7 +250,7 @@ class _HundredState extends State<Hundred> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'This stunning destination in the Philippines consists of a group of islands scattered along the Lingayen Gulf, offering picturesque landscapes and opportunities for island hopping and water activities.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

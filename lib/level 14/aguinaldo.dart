@@ -251,7 +251,7 @@ class _AguinaldoState extends State<Aguinaldo> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'This iconic shrine is a symbol of Philippine independence. It is located in a city where the country s declaration of independence was proclaimed. Visitors can explore the preserved ancestral home of a prominent figure in Philippine history and learn about the struggles and triumphs of the nation s fight for freedom.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

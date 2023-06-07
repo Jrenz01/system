@@ -248,7 +248,7 @@ class _MactanState extends State<Mactan> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'This historical landmark in the Philippines commemorates a significant event involving a famous explorer and a local chieftain. It is located in a city known for its vibrant beaches and is a popular tourist attraction for its cultural and historical significance.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

@@ -245,7 +245,8 @@ class _BiriState extends State<Biri> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'B_R_    '
+                            'I_L_N_',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

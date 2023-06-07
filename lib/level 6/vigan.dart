@@ -235,7 +235,7 @@ class _ViganState extends State<Vigan> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'Take a step back in time as you wander through the cobblestone streets of this UNESCO World Heritage Site, known for its well-preserved Spanish colonial architecture.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

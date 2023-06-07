@@ -258,7 +258,7 @@ class _SampalocState extends State<Sampaloc> {
                             ),
                           ),
                           content: Text(
-                            'Located in San Pablo City Laguna.',
+                            'Located in San Pablo City Laguna and the biggest lake among the Seven Lakes of San Pablo City Laguna.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

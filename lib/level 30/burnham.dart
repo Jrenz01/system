@@ -99,6 +99,7 @@ class _BurnhamState extends State<Burnham> {
                                   style: TextStyle(
                                     fontSize: 30.0,
                                     fontWeight: FontWeight.bold,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(height: 8.0),
@@ -107,6 +108,7 @@ class _BurnhamState extends State<Burnham> {
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.bold,
+                                    color: Colors.white,
                                   ),
                                   textAlign: TextAlign.center,
                                 ),
@@ -120,8 +122,8 @@ class _BurnhamState extends State<Burnham> {
                                     );
                                   },
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors
-                                        .greenAccent, // Customize button color
+                                    backgroundColor:
+                                        Colors.green, // Customize button color
                                   ),
                                   child: Text(
                                     'Next',
@@ -312,7 +314,7 @@ class _BurnhamState extends State<Burnham> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'B_R_H_M \n P_R_',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

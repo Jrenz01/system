@@ -252,7 +252,7 @@ class _UndergroundState extends State<Underground> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'Embark on an underground adventure in one of the world s natural wonders. This river, located in Palawan, Philippines, flows through a captivating limestone cave system. Marvel at the mesmerizing rock formations and encounter unique wildlife as you cruise along its mysterious waters. Prepare to be enchanted by the beauty and grandeur of this UNESCO World Heritage Site, where nature unveils its hidden treasures.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

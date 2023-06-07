@@ -256,7 +256,9 @@ class _MayonState extends State<Mayon> {
                             ),
                           ),
                           content: Text(
-                            'Located in Bicol, Albay.',
+                            'Its perfectly symmetrical cone shape has earned it the nickname "The Perfect Cone" and is often compared to a beautiful maiden. '
+                            'However, despite its breathtaking beauty, it is known to be quite temperamental, '
+                            'with frequent eruptions and volcanic activity.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

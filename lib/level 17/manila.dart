@@ -261,7 +261,7 @@ class _ManilaState extends State<Manila> {
                             ),
                           ),
                           content: Text(
-                            'Hint.',
+                            'Dive into an underwater adventure in this popular attraction located in Manila. Get ready to explore various marine ecosystems, encounter fascinating sea creatures, and even have the opportunity to swim with some of them. From mesmerizing aquariums to thrilling animal shows, this place offers an immersive experience for all ages.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

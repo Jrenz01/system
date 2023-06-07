@@ -252,7 +252,7 @@ class _MalacanangState extends State<Malacanang> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'This iconic Philippine landmark serves as the official residence and workplace of the country s highest-ranking public official.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

@@ -247,7 +247,7 @@ class _TaalState extends State<Taal> {
                             ),
                           ),
                           content: Text(
-                            'Hint',
+                            'This famous Philippine landmark is a unique sight as it is a volcano within a lake within a volcano.',
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,
