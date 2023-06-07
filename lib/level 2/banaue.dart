@@ -190,6 +190,7 @@ class _BanaueState extends State<Banaue> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 2',
@@ -208,12 +209,21 @@ class _BanaueState extends State<Banaue> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Its a place that boasts awe-inspiring landscapes and rich cultural heritage. '

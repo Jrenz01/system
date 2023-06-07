@@ -226,6 +226,7 @@ class _SanagustinState extends State<Sanagustin> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 22',
@@ -244,12 +245,21 @@ class _SanagustinState extends State<Sanagustin> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Step into a UNESCO World Heritage site, a magnificent structure that has withstood the test of time. This church, located in Manila, Philippines, is a testament to Spanish colonial architecture and religious heritage. Admire its intricate details, ornate interiors, and awe-inspiring facade. Discover centuries of history and immerse yourself in the spiritual and cultural significance of this iconic church.',

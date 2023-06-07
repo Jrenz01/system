@@ -225,6 +225,7 @@ class _AguinaldoState extends State<Aguinaldo> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 14',
@@ -243,12 +244,21 @@ class _AguinaldoState extends State<Aguinaldo> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'This iconic shrine is a symbol of Philippine independence. It is located in a city where the country s declaration of independence was proclaimed. Visitors can explore the preserved ancestral home of a prominent figure in Philippine history and learn about the struggles and triumphs of the nation s fight for freedom.',

@@ -230,6 +230,7 @@ class _FortState extends State<Fort> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Center(
             child: Text(
@@ -250,12 +251,21 @@ class _FortState extends State<Fort> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'This historical landmark is located in the heart of Manila and served as a military fortress during the Spanish colonial period. It is known for its iconic entrance gate, beautiful gardens, and well-preserved ruins. Within its walls, visitors can explore historical exhibits, walk along the ramparts, and even visit the Rizal Shrine, dedicated to the Philippine national hero, Jose Rizal.',

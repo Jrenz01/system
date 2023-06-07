@@ -192,6 +192,7 @@ class _SagadaState extends State<Sagada> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 26',
@@ -210,12 +211,21 @@ class _SagadaState extends State<Sagada> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'In this unique town nestled in the Cordillera Mountains of the Philippines, discover a fascinating burial tradition that defies gravity. Explore the mysterious Echo Valley and witness the hanging coffins suspended high on cliffs. These centuries-old coffins, stacked in burial sites like Lumiang Cave, offer a glimpse into the rich cultural heritage of the region. Get ready for an adventure that combines history, spirituality, and awe-inspiring natural beauty.',

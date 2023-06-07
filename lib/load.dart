@@ -59,6 +59,8 @@ class LevelListScreen extends StatelessWidget {
             );
           },
         ),
+        backgroundColor: Colors.black54,
+        centerTitle: true,
         title: Center(
           child: Text('Levels'),
         ),

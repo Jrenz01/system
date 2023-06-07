@@ -223,6 +223,7 @@ class _MagellanState extends State<Magellan> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 7',
@@ -241,12 +242,21 @@ class _MagellanState extends State<Magellan> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'This historical landmark in the Philippines marks the spot where Ferdinand Magellan planted a cross upon arriving in 1521, symbolizing the introduction of Christianity to the islands',

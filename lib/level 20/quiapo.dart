@@ -214,6 +214,7 @@ class _QuiapoState extends State<Quiapo> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 20',
@@ -232,12 +233,21 @@ class _QuiapoState extends State<Quiapo> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Step into the past and explore a centuries-old church nestled in a picturesque town. This church, located in the Philippines, showcases exquisite Baroque architecture adorned with intricate carvings and ornate details. It stands as a testament to the country s rich history and religious heritage. Pay a visit to this cultural gem and immerse yourself in its timeless beauty and spiritual significance.',

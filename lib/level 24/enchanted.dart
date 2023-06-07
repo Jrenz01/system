@@ -226,6 +226,7 @@ class _EnchantedState extends State<Enchanted> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 24',
@@ -244,12 +245,21 @@ class _EnchantedState extends State<Enchanted> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Get ready for a thrilling adventure in this magical theme park located in Santa Rosa, Laguna, Philippines. Experience heart-pounding rides, captivating shows, and exciting attractions for all ages. From roller coasters to water slides, there s something for everyone in this enchanting destination. Don t miss the chance to create unforgettable memories and immerse yourself in a world of fun and fantasy.',

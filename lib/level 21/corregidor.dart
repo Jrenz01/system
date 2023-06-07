@@ -209,6 +209,7 @@ class _CorregidorState extends State<Corregidor> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 21',
@@ -227,12 +228,21 @@ class _CorregidorState extends State<Corregidor> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Journey to a historic island fortress that witnessed significant events during World War II. This island, located in the Philippines, served as a strategic defense post and played a crucial role in the country s history. Explore the remnants of military structures, tunnels, and batteries that stand as testaments to the island s wartime past. Uncover the stories of valor, resilience, and sacrifice as you delve into the fascinating history of this iconic destination.',

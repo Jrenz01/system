@@ -210,14 +210,6 @@ class _BascoState extends State<Basco> {
 
   bool isSubmitClicked = false;
 
-  bool _showHint = false;
-
-  void _toggleHint() {
-    setState(() {
-      _showHint = !_showHint;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -233,6 +225,7 @@ class _BascoState extends State<Basco> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Center(
             child: Text(
@@ -253,12 +246,21 @@ class _BascoState extends State<Basco> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Located in the northernmost province of the Philippines, this picturesque lighthouse stands tall on Naidi Hills in Basco. It offers breathtaking panoramic views of the lush green hills and the open sea. To reach this iconic landmark, embark on a 1.2-kilometer hike from the Port of Basco. Let the captivating scenery guide your way as you discover the beauty of this enchanting destination.',

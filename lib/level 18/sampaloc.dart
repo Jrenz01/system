@@ -230,6 +230,7 @@ class _SampalocState extends State<Sampaloc> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Center(
             child: Text(
@@ -250,12 +251,21 @@ class _SampalocState extends State<Sampaloc> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Located in San Pablo City Laguna and the biggest lake among the Seven Lakes of San Pablo City Laguna.',

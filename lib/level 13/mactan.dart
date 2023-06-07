@@ -222,6 +222,7 @@ class _MactanState extends State<Mactan> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 13',
@@ -240,12 +241,21 @@ class _MactanState extends State<Mactan> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'This historical landmark in the Philippines commemorates a significant event involving a famous explorer and a local chieftain. It is located in a city known for its vibrant beaches and is a popular tourist attraction for its cultural and historical significance.',

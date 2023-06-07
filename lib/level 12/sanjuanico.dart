@@ -226,6 +226,7 @@ class _SanjuanicoState extends State<Sanjuanico> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 12',
@@ -244,12 +245,21 @@ class _SanjuanicoState extends State<Sanjuanico> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'This iconic bridge in the Philippines connects two major islands and is considered one of the longest bridges in the country. It spans across a body of water known for its strong tidal currents and is named after a famous couple in Philippine folklore.',
@@ -421,7 +431,7 @@ class _SanjuanicoState extends State<Sanjuanico> {
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.black54,
+                                backgroundColor: Colors.black54,
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 20,
                                   vertical: 10,

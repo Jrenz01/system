@@ -233,6 +233,7 @@ class _ManilaState extends State<Manila> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Center(
             child: Text(
@@ -253,12 +254,21 @@ class _ManilaState extends State<Manila> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Dive into an underwater adventure in this popular attraction located in Manila. Get ready to explore various marine ecosystems, encounter fascinating sea creatures, and even have the opportunity to swim with some of them. From mesmerizing aquariums to thrilling animal shows, this place offers an immersive experience for all ages.',

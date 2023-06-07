@@ -209,6 +209,7 @@ class _TagaytayState extends State<Tagaytay> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 23',
@@ -227,12 +228,21 @@ class _TagaytayState extends State<Tagaytay> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Escape to this picturesque city nestled in the highlands of Cavite, Philippines. Marvel at breathtaking views of a famous lake and a volcanic island. Feel the cool breeze and enjoy the serene atmosphere as you explore its scenic attractions. Indulge in delicious cuisine, visit charming gardens, and experience an unforgettable getaway in this popular tourist destination.',

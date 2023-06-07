@@ -263,14 +263,6 @@ class _BurnhamState extends State<Burnham> {
 
   bool isSubmitClicked = false;
 
-  bool _showHint = false;
-
-  void _toggleHint() {
-    setState(() {
-      _showHint = !_showHint;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -286,6 +278,7 @@ class _BurnhamState extends State<Burnham> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Center(
             child: Text(
@@ -306,12 +299,21 @@ class _BurnhamState extends State<Burnham> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'B_R_H_M \n P_R_',

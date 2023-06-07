@@ -192,6 +192,7 @@ class _BoracayState extends State<Boracay> {
               );
             },
           ),
+          backgroundColor: Colors.black54,
           centerTitle: true,
           title: Text(
             'Level 15',
@@ -210,12 +211,21 @@ class _BoracayState extends State<Boracay> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'This tropical paradise is known for its pristine white sand beaches, crystal-clear turquoise waters, and vibrant nightlife. It is a popular destination for beach lovers and water sports enthusiasts, offering a wide range of activities such as snorkeling, diving, and island hopping. Visitors can enjoy breathtaking sunsets, indulge in delicious seafood, and relax in luxurious resorts.',
