@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%201/mayon.dart';
+import 'package:system/home.dart';
 import 'package:system/level%203/chocolatehills.dart';
 
 void main() => runApp(Banaue());
@@ -68,6 +68,7 @@ class _BanaueState extends State<Banaue> {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       '''\nBanaue, officially the Municipality of Banaue is a 4th class municipality in the province of Ifugao, Philippines. According to the 2020 census, it has a population of 20,652 people. It is widely known as the site of the UNESCO World Heritage Site, the Batad Rice Terraces and Bangaan Rice Terraces.\n\nLocation: Cordillera Administrative Region, Ifugao.\nBuild: 2,000+ years ago.''',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
@@ -186,7 +187,7 @@ class _BanaueState extends State<Banaue> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Mayon()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -229,6 +230,7 @@ class _BanaueState extends State<Banaue> {
                             'Its a place that boasts awe-inspiring landscapes and rich cultural heritage. '
                             'Nestled in the mountains of the Philippines, it is known for its stunning rice terraces that cascade down the slopes.'
                             'These terraces are a testament to the ingenuity and skill of the indigenous people who carved them out centuries ago.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2024/enchanted.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2026/sagada.dart';
 
 void main() => runApp(Bangui());
@@ -69,6 +69,7 @@ class _BanguiState extends State<Bangui> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nThe Bangui Wind Farm is a wind farm in Bangui, Ilocos Norte, Philippines. The wind farm uses 20 units of 70-meter (230 ft) high Vestas V82 1.65 MW wind turbines, arranged in a single row stretching along a 9-kilometer (5.6 mi) shoreline of Bangui Bay, facing the South China Sea.\n\nMake and model: Vestas: V82.\nOwner: Ayala Corporation.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -221,7 +222,7 @@ class _BanguiState extends State<Bangui> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Enchanted()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -264,6 +265,7 @@ class _BanguiState extends State<Bangui> {
                           ),
                           content: Text(
                             'Take a trip to this breathtaking coastal site in Bangui, Ilocos Norte, Philippines. Marvel at the towering giants that line the shoreline, harnessing the power of the wind. These impressive windmills are not only a stunning sight but also a symbol of renewable energy. Feel the breeze and witness the beauty of sustainable technology as you explore this iconic destination.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2013/mactan.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2015/boracay.dart';
 
 void main() => runApp(Aguinaldo());
@@ -69,6 +69,7 @@ class _AguinaldoState extends State<Aguinaldo> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nThe Emilio Aguinaldo Shrine or the Cavite El Viejo Shrine is a national shrine located in Kawit, Cavite in the Philippines, where the Philippine Declaration of Independence from Spain was declared on June 12, 1898 or Independence Day. To commemorate the event, now known as Araw ng Kalayaan or Independence Day, a national holiday.\n\nConstruction started: 1845.\nBurials: Emilio Aguinaldo.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -221,7 +222,7 @@ class _AguinaldoState extends State<Aguinaldo> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Mactan()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -262,6 +263,7 @@ class _AguinaldoState extends State<Aguinaldo> {
                           ),
                           content: Text(
                             'This iconic shrine is a symbol of Philippine independence. It is located in a city where the country s declaration of independence was proclaimed. Visitors can explore the preserved ancestral home of a prominent figure in Philippine history and learn about the struggles and triumphs of the nation s fight for freedom.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

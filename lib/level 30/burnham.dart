@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:system/home.dart';
-import 'package:system/level%2029/cantabon.dart';
 
 class Burnham extends StatefulWidget {
   @override
@@ -67,6 +66,7 @@ class _BurnhamState extends State<Burnham> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nBurnham Park, officially known as the Burnham Park Reservation, is a historic urban park located in downtown Baguio, Philippines. It was designed by eponymous American architect and Baguio city planner, Daniel Burnham.\n\nDesigner: Daniel Burnham.\nFounder: Leonard Wood.\nOwned by: Department of Tourism\nEstablished: August 6, 1925.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -274,7 +274,7 @@ class _BurnhamState extends State<Burnham> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Cantabon()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -317,6 +317,7 @@ class _BurnhamState extends State<Burnham> {
                           ),
                           content: Text(
                             'B_R_H_M \n P_R_',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

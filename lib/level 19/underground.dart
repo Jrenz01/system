@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2018/sampaloc.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2020/quiapo.dart';
 
 void main() => runApp(Underground());
@@ -69,6 +69,7 @@ class _UndergroundState extends State<Underground> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nThe Puerto Princesa Underground River in Palawan, Philippines, is a UNESCO World Heritage Site and one of the longest navigable underground rivers globally flows for 8.2 kilometers and features stunning limestone formations and chambers.\n\nEstablished: November 12, 1999.\nDesignated: June 30, 2012\nManagement: Department of Environment and Natural Resources.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -222,7 +223,7 @@ class _UndergroundState extends State<Underground> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Sampaloc()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -263,6 +264,7 @@ class _UndergroundState extends State<Underground> {
                           ),
                           content: Text(
                             'Embark on an underground adventure in one of the world s natural wonders. This river, located in Palawan, Philippines, flows through a captivating limestone cave system. Marvel at the mesmerizing rock formations and encounter unique wildlife as you cruise along its mysterious waters. Prepare to be enchanted by the beauty and grandeur of this UNESCO World Heritage Site, where nature unveils its hidden treasures.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

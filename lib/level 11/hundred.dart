@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2010/malacanang.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2012/sanjuanico.dart';
 
 void main() => runApp(Hundred());
@@ -69,6 +69,7 @@ class _HundredState extends State<Hundred> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nThe Hundred Islands National Park is a popular tourist destination located in the province of Pangasinan, in the northern part of the Philippines. The park is known for its scenic views, crystal-clear waters, and over 120 small islands and islets scattered throughout the area. \n\nAddress: 623Q+XFF, Alaminos, Pangasinan.\nEstablished: January 18, 1940.\nTotal islands: 123–124.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -220,7 +221,7 @@ class _HundredState extends State<Hundred> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Malacanang()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -261,6 +262,7 @@ class _HundredState extends State<Hundred> {
                           ),
                           content: Text(
                             'This stunning destination in the Philippines consists of a group of islands scattered along the Lingayen Gulf, offering picturesque landscapes and opportunities for island hopping and water activities.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2026/sagada.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2028/biri.dart';
 
 void main() => runApp(Basco());
@@ -69,6 +69,7 @@ class _BascoState extends State<Basco> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nBasco Lighthouse is a lighthouse in the town of Basco in Batanes, the northernmost province in the Philippines. Located in Naidi Hills in Barangay San Antonio, the lush green hills and the open sea provide a beautiful backdrop for the lighthouse. The place can easily be reached by a 1.2-km (3/4 mile) hike from the Port of Basco.\n\nConstructed: 2003.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -221,7 +222,7 @@ class _BascoState extends State<Basco> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Sagada()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -264,6 +265,7 @@ class _BascoState extends State<Basco> {
                           ),
                           content: Text(
                             'Located in the northernmost province of the Philippines, this picturesque lighthouse stands tall on Naidi Hills in Basco. It offers breathtaking panoramic views of the lush green hills and the open sea. To reach this iconic landmark, embark on a 1.2-kilometer hike from the Port of Basco. Let the captivating scenery guide your way as you discover the beauty of this enchanting destination.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

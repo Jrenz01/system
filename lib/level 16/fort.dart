@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2015/boracay.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2017/manila.dart';
 
 void main() => runApp(Fort());
@@ -69,6 +69,7 @@ class _FortState extends State<Fort> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nFort Santiago, built in 1571, is a citadel built by Spanish navigator and governor Miguel López de Legazpi for the newly established city of Manila in the Philippines. The defense fortress is located in Intramuros, the walled city of Manila.\n\nArchitect(s): Gómez Pérez Dasmariñas (1590); Fernándo Valdés y Tamon (1730s).\nRenovated: 1733.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -226,7 +227,7 @@ class _FortState extends State<Fort> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Boracay()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -269,6 +270,7 @@ class _FortState extends State<Fort> {
                           ),
                           content: Text(
                             'This historical landmark is located in the heart of Manila and served as a military fortress during the Spanish colonial period. It is known for its iconic entrance gate, beautiful gardens, and well-preserved ruins. Within its walls, visitors can explore historical exhibits, walk along the ramparts, and even visit the Rizal Shrine, dedicated to the Philippine national hero, Jose Rizal.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

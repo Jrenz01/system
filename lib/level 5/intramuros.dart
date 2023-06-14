@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%204/luneta.dart';
+import 'package:system/home.dart';
 import 'package:system/level%206/vigan.dart';
 
 void main() => runApp(Intramuros());
@@ -69,6 +69,7 @@ class _IntramurosState extends State<Intramuros> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nIntramuros is a historic walled city located in the heart of Manila, Philippines. It was built during the Spanish colonial period in the 16th century and served as the seat of government and center of trade and commerce during that time. The city is surrounded by thick walls.\n\nFounded by: Miguel López de Legazpi (June 12, 1571).\nPopulation: 5,935 (2015).''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -214,7 +215,7 @@ class _IntramurosState extends State<Intramuros> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Luneta()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -256,6 +257,7 @@ class _IntramurosState extends State<Intramuros> {
                           content: Text(
                             'Explore the ancient walls and immerse yourself in the rich history of this walled city, '
                             'located within the bustling capital.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

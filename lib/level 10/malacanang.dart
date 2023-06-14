@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2011/hundred.dart';
-import 'package:system/level%209/taal.dart';
 
 void main() => runApp(Malacanang());
 
@@ -69,6 +69,7 @@ class _MalacanangState extends State<Malacanang> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nMalacañang Palace is the official residence and principal workplace of the President of the Philippines. Located in the capital city of Manila, the palace complex consists of several buildings, including the main palace, presidential offices, and a museum. The palace has a long and storied history, having served as the residence of Spanish colonial governors, American governors-general, and Philippine presidents.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -222,7 +223,7 @@ class _MalacanangState extends State<Malacanang> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Taal()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -263,6 +264,7 @@ class _MalacanangState extends State<Malacanang> {
                           ),
                           content: Text(
                             'This iconic Philippine landmark serves as the official residence and workplace of the country s highest-ranking public official.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

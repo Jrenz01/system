@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2010/malacanang.dart';
-import 'package:system/level%208/baguio.dart';
 
 void main() => runApp(Taal());
 
@@ -69,6 +69,7 @@ class _TaalState extends State<Taal> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nTaal Volcano is an active volcano located on the island of Luzon, in the province of Batangas, Philippines. It is known for its picturesque crater lake, which contains another small volcanic island called Vulcan Point. Taal Volcano is considered one of the world's smallest active volcanoes, standing at only 311 meters tall.\n\nLocation: Talisay and San Nicolas, Batangas.\nEruptions: 38 historical eruptions.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -217,7 +218,7 @@ class _TaalState extends State<Taal> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Baguio()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -258,6 +259,7 @@ class _TaalState extends State<Taal> {
                           ),
                           content: Text(
                             'This famous Philippine landmark is a unique sight as it is a volcano within a lake within a volcano.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

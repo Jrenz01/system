@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2025/bangui.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2027/basco.dart';
 
 void main() => runApp(Sagada());
@@ -69,6 +69,7 @@ class _SagadaState extends State<Sagada> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nSagada is a town in the Cordillera Mountains, within the Philippines’ Mountain Province. Echo Valley’s hanging coffins are displayed high on cliffs, while centuries-old coffins are stacked in burial sites like Lumiang Cave. The nearby Sumaguing Cave has unusual limestone formations.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -188,7 +189,7 @@ class _SagadaState extends State<Sagada> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Bangui()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -229,6 +230,7 @@ class _SagadaState extends State<Sagada> {
                           ),
                           content: Text(
                             'In this unique town nestled in the Cordillera Mountains of the Philippines, discover a fascinating burial tradition that defies gravity. Explore the mysterious Echo Valley and witness the hanging coffins suspended high on cliffs. These centuries-old coffins, stacked in burial sites like Lumiang Cave, offer a glimpse into the rich cultural heritage of the region. Get ready for an adventure that combines history, spirituality, and awe-inspiring natural beauty.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

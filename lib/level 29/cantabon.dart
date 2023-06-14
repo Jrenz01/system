@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2028/biri.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2030/burnham.dart';
 
 void main() => runApp(Cantabon());
@@ -69,6 +69,7 @@ class _CantabonState extends State<Cantabon> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nLocated in central Siquijor the Philippines, Cantabon Cave is an adventurous trail inside a pitch-black cave beneath the earth. From a small hole in the ground, local guides lead visitors into this unique Siquijor tourist attraction.\n\nBiggest Cave in the Philippines.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -218,7 +219,7 @@ class _CantabonState extends State<Cantabon> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Biri()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -262,6 +263,7 @@ class _CantabonState extends State<Cantabon> {
                           content: Text(
                             'C_NTA_ON   '
                             'C_V_',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

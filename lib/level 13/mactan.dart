@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2012/sanjuanico.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2014/aguinaldo.dart';
 
 void main() => runApp(Mactan());
@@ -69,6 +69,7 @@ class _MactanState extends State<Mactan> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nThe Mactan Shrine is a monument located in Lapu-Lapu City, Cebu, Philippines, dedicated to the Battle of Mactan, which occurred on April 27, 1521. It commemorates the bravery of Lapu-Lapu, a native chieftain who led his warriors to victory over the Spanish forces led by the Portuguese explorer Ferdinand Magellan.\n\nEstablished: 1969 (as a national shrine).\n''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -218,7 +219,7 @@ class _MactanState extends State<Mactan> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Sanjuanico()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -259,6 +260,7 @@ class _MactanState extends State<Mactan> {
                           ),
                           content: Text(
                             'This historical landmark in the Philippines commemorates a significant event involving a famous explorer and a local chieftain. It is located in a city known for its vibrant beaches and is a popular tourist attraction for its cultural and historical significance.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

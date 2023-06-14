@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2019/underground.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2021/corregidor.dart';
 
 void main() => runApp(Quiapo());
@@ -64,7 +64,9 @@ class _QuiapoState extends State<Quiapo> {
                   ),
                 ),
                 Text(
-                    '''\nQuiapo Church, officially known as the Minor Basilica of the Black Nazarene, prominent Catholic church located in the district of Quiapo in Manila, Philippines. It is one of the most well-known churches in the country and holds great cultural and religious significance.\n\nArchitects: José María Zaragoza, Juan Nakpil.\nArchitectural style: Baroque architecture\nOpened: 1929\nFounded: 1588; 435 years ago.'''),
+                  '''\nQuiapo Church, officially known as the Minor Basilica of the Black Nazarene, prominent Catholic church located in the district of Quiapo in Manila, Philippines. It is one of the most well-known churches in the country and holds great cultural and religious significance.\n\nArchitects: José María Zaragoza, Juan Nakpil.\nArchitectural style: Baroque architecture\nOpened: 1929\nFounded: 1588; 435 years ago.''',
+                  textAlign: TextAlign.justify,
+                ),
               ],
             ),
             actions: [
@@ -210,7 +212,7 @@ class _QuiapoState extends State<Quiapo> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Underground()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -251,6 +253,7 @@ class _QuiapoState extends State<Quiapo> {
                           ),
                           content: Text(
                             'Step into the past and explore a centuries-old church nestled in a picturesque town. This church, located in the Philippines, showcases exquisite Baroque architecture adorned with intricate carvings and ornate details. It stands as a testament to the country s rich history and religious heritage. Pay a visit to this cultural gem and immerse yourself in its timeless beauty and spiritual significance.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

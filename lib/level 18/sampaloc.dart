@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2017/manila.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2019/underground.dart';
 
 void main() => runApp(Sampaloc());
@@ -69,6 +69,7 @@ class _SampalocState extends State<Sampaloc> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nSampaloc Lake, situated in San Pablo City, Laguna, Philippines boasts both natural beauty and historical significance. As the largest among the seven lakes in the city, its name, derived from the Tagalog word for tamarind tree, reflects the abundance of these trees that once surrounded its shores.\n\nGroup: Seven Lakes of San Pablo.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -226,7 +227,7 @@ class _SampalocState extends State<Sampaloc> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Manila()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -269,6 +270,7 @@ class _SampalocState extends State<Sampaloc> {
                           ),
                           content: Text(
                             'Located in San Pablo City Laguna and the biggest lake among the Seven Lakes of San Pablo City Laguna.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

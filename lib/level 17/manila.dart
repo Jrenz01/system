@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2016/fort.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2018/sampaloc.dart';
 
 void main() => runApp(Manila());
@@ -69,6 +69,7 @@ class _ManilaState extends State<Manila> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nThe Manila Ocean Park, also known as Ocean Park, is an oceanarium in Manila, Philippines. It is owned by China Oceanis Philippines Inc., a subsidiary of China Oceanis Inc., a Singaporean-registered firm. It is located behind the Quirino Grandstand at Rizal Park.\n\nOpened: March 1, 2008.\nMain contractor: E.R. Hitosis and Associates.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -229,7 +230,7 @@ class _ManilaState extends State<Manila> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Fort()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -272,6 +273,7 @@ class _ManilaState extends State<Manila> {
                           ),
                           content: Text(
                             'Dive into an underwater adventure in this popular attraction located in Manila. Get ready to explore various marine ecosystems, encounter fascinating sea creatures, and even have the opportunity to swim with some of them. From mesmerizing aquariums to thrilling animal shows, this place offers an immersive experience for all ages.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

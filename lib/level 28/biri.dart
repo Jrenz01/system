@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2027/basco.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2029/cantabon.dart';
 
 void main() => runApp(Biri());
@@ -69,6 +69,7 @@ class _BiriState extends State<Biri> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nBiri, officially the Municipality of Biri, is a 5th class municipality in the province of Northern Samar, Philippines. According to the 2020 census, it has a population of 11,274 people. The archipelagic town is also known for its inakob, a traditional Waray dish made by first cooking grated root crops (gabi) with coconut milk, condensed milk, eggs, brown sugar, and an herb called anuv.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -205,7 +206,7 @@ class _BiriState extends State<Biri> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Basco()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -249,6 +250,7 @@ class _BiriState extends State<Biri> {
                           content: Text(
                             'B_R_    '
                             'I_L_N_',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

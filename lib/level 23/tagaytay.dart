@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2022/sanagustin.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2024/enchanted.dart';
 
 void main() => runApp(Tagaytay());
@@ -69,6 +69,7 @@ class _TagaytayState extends State<Tagaytay> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nTagaytay, officially the City of Tagaytay, is a 2nd class component city in the province of Cavite, Philippines. According to the 2020 census, it has a population of 85,330 people. Tagaytay overlooks Taal Lake in Batangas and provides views of Taal Volcano Island in the middle of the lake through various vantage points situated in the city.\n\nFeast date: February 11.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -205,7 +206,7 @@ class _TagaytayState extends State<Tagaytay> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Sanagustin()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -246,6 +247,7 @@ class _TagaytayState extends State<Tagaytay> {
                           ),
                           content: Text(
                             'Escape to this picturesque city nestled in the highlands of Cavite, Philippines. Marvel at breathtaking views of a famous lake and a volcanic island. Feel the cool breeze and enjoy the serene atmosphere as you explore its scenic attractions. Indulge in delicious cuisine, visit charming gardens, and experience an unforgettable getaway in this popular tourist destination.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

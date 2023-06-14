@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2023/tagaytay.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2025/bangui.dart';
 
 void main() => runApp(Enchanted());
@@ -69,6 +69,7 @@ class _EnchantedState extends State<Enchanted> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nEnchanted Kingdom (abbreviated as EK), is a theme park in the Philippines. It is located in Santa Rosa, Laguna. It has a land area of 25 hectares (62 acres). The park is managed and operated by Enchanted Kingdom Inc.Enchanted Kingdom is a member of the International Association of Amusement Parks and Attractions (IAAPA).\n\nOpened: June 1995.\nOwner: Enchanted Kingdom, Inc.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -222,7 +223,7 @@ class _EnchantedState extends State<Enchanted> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Tagaytay()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -263,6 +264,7 @@ class _EnchantedState extends State<Enchanted> {
                           ),
                           content: Text(
                             'Get ready for a thrilling adventure in this magical theme park located in Santa Rosa, Laguna, Philippines. Experience heart-pounding rides, captivating shows, and exciting attractions for all ages. From roller coasters to water slides, there s something for everyone in this enchanting destination. Don t miss the chance to create unforgettable memories and immerse yourself in a world of fun and fantasy.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

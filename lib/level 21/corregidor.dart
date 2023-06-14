@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2020/quiapo.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2022/sanagustin.dart';
 
 void main() => runApp(Corregidor());
@@ -69,6 +69,7 @@ class _CorregidorState extends State<Corregidor> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nCorregidor is an island located at the entrance of Manila Bay in the southwestern part of Luzon in the Philippines, and is considered part of the Province of Cavite. Due to this location, Corregidor has historically been fortified with coastal artillery batteries to defend the entrance of Manila Bay and Manila itself from attacks by enemy warships.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -205,7 +206,7 @@ class _CorregidorState extends State<Corregidor> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Quiapo()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -246,6 +247,7 @@ class _CorregidorState extends State<Corregidor> {
                           ),
                           content: Text(
                             'Journey to a historic island fortress that witnessed significant events during World War II. This island, located in the Philippines, served as a strategic defense post and played a crucial role in the country s history. Explore the remnants of military structures, tunnels, and batteries that stand as testaments to the island s wartime past. Uncover the stories of valor, resilience, and sacrifice as you delve into the fascinating history of this iconic destination.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

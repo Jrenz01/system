@@ -68,6 +68,7 @@ class _MayonState extends State<Mayon> {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       '''\nMayon, also known as Mount Mayon and Mayon Volcano is an active astratovolcano in the province of Albay in Bicol, Philippines. A popular tourist spot, it is renowned for its perfect cone because of its symmetric conical shape.\n\nLocation: Bicol, Albay\nFirst ascent: Scotsmen Paton & Stewart (1858)\nEruption: 30+ eruptions recorded since 1616. ''',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
@@ -261,6 +262,7 @@ class _MayonState extends State<Mayon> {
                             'Its perfectly symmetrical cone shape has earned it the nickname "The Perfect Cone" and is often compared to a beautiful maiden. '
                             'However, despite its breathtaking beauty, it is known to be quite temperamental, '
                             'with frequent eruptions and volcanic activity.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

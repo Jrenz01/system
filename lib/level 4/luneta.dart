@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%203/chocolatehills.dart';
+import 'package:system/home.dart';
 import 'package:system/level%205/intramuros.dart';
 
 void main() => runApp(Luneta());
@@ -69,6 +69,7 @@ class _LunetaState extends State<Luneta> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nLuneta, also known as Rizal Park, is a historical urban park located in the heart of Manila, Philippines. The park covers an area of 58 hectares and is named after the country's national hero, Dr. Jose Rizal, who was executed on the site in 1896.\n\nCreated: 1820.\nLocation: Ermita, Manila.\nAdministered by: National Parks Development Committee.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -188,7 +189,7 @@ class _LunetaState extends State<Luneta> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Chocolatehills()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -229,6 +230,7 @@ class _LunetaState extends State<Luneta> {
                           ),
                           content: Text(
                             'This historic park in the heart of the city holds an iconic monument and is a symbol of national pride.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

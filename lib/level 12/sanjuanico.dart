@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2011/hundred.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2013/mactan.dart';
 
 void main() => runApp(Sanjuanico());
@@ -69,6 +69,7 @@ class _SanjuanicoState extends State<Sanjuanico> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nThe San Juanico Bridge is a long suspension bridge located in the Philippines, stretching across the San Juanico Strait and connecting the islands of Leyte and Samar in the Visayas region. The bridge is considered one of the longest in the Philippines, with a total length of 2.16 kilometers. It was completed in 1973 and has since become a significant landmark in the region, as well as an important transportation link for locals and tourists alike.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -222,7 +223,7 @@ class _SanjuanicoState extends State<Sanjuanico> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Hundred()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -263,6 +264,7 @@ class _SanjuanicoState extends State<Sanjuanico> {
                           ),
                           content: Text(
                             'This iconic bridge in the Philippines connects two major islands and is considered one of the longest bridges in the country. It spans across a body of water known for its strong tidal currents and is named after a famous couple in Philippine folklore.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%205/intramuros.dart';
+import 'package:system/home.dart';
 import 'package:system/level%207/magellan.dart';
 
 void main() => runApp(Vigan());
@@ -69,6 +69,7 @@ class _ViganState extends State<Vigan> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nVigan City is a historic city located in the province of Ilocos Sur, in the northern part of the Philippines. The city is known for its well-preserved Spanish colonial and Asian architecture, including its famous cobblestone streets, old houses, and the Vigan Cathedral. The city's architecture is a blend of European and Asian styles.\n\nFounded: 1572.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -205,27 +206,17 @@ class _ViganState extends State<Vigan> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Intramuros()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
           backgroundColor: Colors.black54,
           centerTitle: true,
-          title: Row(
-            children: [
-              SizedBox(width: 5),
-              Text(
-                'Hint',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              ),
-              Icon(
-                Icons.lightbulb_circle,
-                color: Colors.yellow,
-              ),
-            ],
+          title: Text(
+            'Level 6',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
           actions: [
             Container(
@@ -238,15 +229,25 @@ class _ViganState extends State<Vigan> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text(
-                            'Hint',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                          title: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              Text(
+                                'Hint',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Icon(
+                                Icons.lightbulb_circle,
+                                color: Colors.yellow,
+                              ),
+                            ],
                           ),
                           content: Text(
                             'Take a step back in time as you wander through the cobblestone streets of this UNESCO World Heritage Site, known for its well-preserved Spanish colonial architecture.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%206/vigan.dart';
+import 'package:system/home.dart';
 import 'package:system/level%208/baguio.dart';
 
 void main() => runApp(Magellan());
@@ -69,6 +69,7 @@ class _MagellanState extends State<Magellan> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nMagellan's Cross is a historical landmark located in Cebu City, Philippines. The cross was planted by Portuguese explorer Ferdinand Magellan in 1521, during his expedition to the Philippines.\n\nEstablished: April 21, 1521.\nPlanted by: Ferdinand Magellan.\nMaterials: Coral stone.\nLocation: Plaza Sugbo, Cebu City.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -219,7 +220,7 @@ class _MagellanState extends State<Magellan> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Vigan()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -260,6 +261,7 @@ class _MagellanState extends State<Magellan> {
                           ),
                           content: Text(
                             'This historical landmark in the Philippines marks the spot where Ferdinand Magellan planted a cross upon arriving in 1521, symbolizing the introduction of Christianity to the islands',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

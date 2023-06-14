@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%202/banaue.dart';
+import 'package:system/home.dart';
 import 'package:system/level%204/luneta.dart';
 
 void main() => runApp(Chocolatehills());
@@ -68,6 +68,7 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       '''\nThe Chocolate Hills are a geological formation. The hills consist of around 1,200 to 1,700 individual mounds that are mostly symmetrical and conical in shape, and are covered in grass that turns brown during the dry season, giving them the appearance of chocolate mounds.\n\nEstablished: June 18, 1988.\nLocation: Bohol Province.\nRock Age: Late Pliocene to Early Pleistocene.''',
+                      textAlign: TextAlign.justify,
                     ),
                   ),
                 ],
@@ -218,7 +219,7 @@ class _ChocolatehillsState extends State<Chocolatehills> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Banaue()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -260,6 +261,7 @@ class _ChocolatehillsState extends State<Chocolatehills> {
                           content: Text(
                             'This enchanting landscape is found in the heart of a beautiful island in the Philippines.'
                             'It is a sight to behold, with countless mounds of uniformly shaped hills stretching as far as the eye can see. During the dry season, these hills take on a unique transformation, resembling hills made of chocolate.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

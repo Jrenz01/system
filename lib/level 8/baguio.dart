@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%207/magellan.dart';
+import 'package:system/home.dart';
 import 'package:system/level%209/taal.dart';
 
 void main() => runApp(Baguio());
@@ -69,6 +69,7 @@ class _BaguioState extends State<Baguio> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nBaguio City is a mountain resort town located in the province of Benguet, in the northern part of the Philippines. Today, Baguio City is a popular tourist destination in the Philippines and is known for its cultural and historical landmarks, including the Baguio Cathedral, Burnham Park, and the Tam-Awan Village.\n\nFounded: 1900.\nBaguio is the Summer Capital of the Philippines.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -188,7 +189,7 @@ class _BaguioState extends State<Baguio> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Magellan()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -229,6 +230,7 @@ class _BaguioState extends State<Baguio> {
                           ),
                           content: Text(
                             'Known as the "Summer Capital of the Philippines," this city is nestled in the mountains and offers a cool climate, picturesque landscapes, and vibrant flower festivals.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

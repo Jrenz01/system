@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2014/aguinaldo.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2016/fort.dart';
 
 void main() => runApp(Boracay());
@@ -69,6 +69,7 @@ class _BoracayState extends State<Boracay> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nBoracay is a resort island in the Western Visayas region of the Philippines, located 0.8 kilometers (0.50 mi) off the northwest coast of Panay. It has a total land area of 10.32 square kilometers (3.98 sq mi), under the jurisdiction of three barangays in Malay, Aklan, and had a population of 37,802 in 2020. Boracay was originally inhabited by the Tumandok and Ati people.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -188,7 +189,7 @@ class _BoracayState extends State<Boracay> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Aguinaldo()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -229,6 +230,7 @@ class _BoracayState extends State<Boracay> {
                           ),
                           content: Text(
                             'This tropical paradise is known for its pristine white sand beaches, crystal-clear turquoise waters, and vibrant nightlife. It is a popular destination for beach lovers and water sports enthusiasts, offering a wide range of activities such as snorkeling, diving, and island hopping. Visitors can enjoy breathtaking sunsets, indulge in delicious seafood, and relax in luxurious resorts.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,

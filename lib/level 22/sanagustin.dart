@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:system/level%2021/corregidor.dart';
+import 'package:system/home.dart';
 import 'package:system/level%2023/tagaytay.dart';
 
 void main() => runApp(Sanagustin());
@@ -69,6 +69,7 @@ class _SanagustinState extends State<Sanagustin> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         '''\nThe Church of Saint Augustine, also known as the Archdiocesan Shrine of Our Lady of Consolation and Cincture or the Immaculate Conception Parish, is a Roman Catholic church under the auspices of the Order of Saint Augustine located inside the historic walled city of Intramuros in Manila, Philippines. Completed in 1607, it is the oldest stone church in the country.\n\nFounded: 1571; 452 years ago.''',
+                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
@@ -222,7 +223,7 @@ class _SanagustinState extends State<Sanagustin> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Corregidor()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),
@@ -263,6 +264,7 @@ class _SanagustinState extends State<Sanagustin> {
                           ),
                           content: Text(
                             'Step into a UNESCO World Heritage site, a magnificent structure that has withstood the test of time. This church, located in Manila, Philippines, is a testament to Spanish colonial architecture and religious heritage. Admire its intricate details, ornate interiors, and awe-inspiring facade. Discover centuries of history and immerse yourself in the spiritual and cultural significance of this iconic church.',
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,
