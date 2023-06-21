@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:system/home.dart';
 import 'package:system/level%2011/hundred.dart';
 
-void main() => runApp(Malacanang());
+import '../score_provider.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider<ScoreProvider>(
+      create: (_) => ScoreProvider(),
+      child: MaterialApp(
+        home: Malacanang(),
+      ),
+    ),
+  );
+}
 
 class Malacanang extends StatefulWidget {
   @override
@@ -42,6 +54,8 @@ class _MalacanangState extends State<Malacanang> {
       }
     }
     if (isAnswerCorrect()) {
+      final scoreProvider = Provider.of<ScoreProvider>(context, listen: false);
+      scoreProvider.incrementScore();
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -214,9 +228,8 @@ class _MalacanangState extends State<Malacanang> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Level 10',
-      home: Scaffold(
+    return Consumer<ScoreProvider>(builder: (context, scoreProvider, _) {
+      return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.keyboard_arrow_left),
@@ -305,13 +318,33 @@ class _MalacanangState extends State<Malacanang> {
         backgroundColor: Colors.lightBlue[100],
         body: Column(
           children: [
-            SizedBox(height: 10),
+            SizedBox(height: 40),
             Align(
               alignment: Alignment.topCenter,
               child: Image.asset(
                 'assets/image/malacanang.png',
-                width: 350,
-                height: 250,
+                width: 380,
+                height: 230,
+              ),
+            ),
+            SizedBox(height: 10),
+            Positioned(
+              top: 20,
+              left: 20,
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  'Score: ${scoreProvider.score}',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
             SizedBox(height: 10),
@@ -456,7 +489,7 @@ class _MalacanangState extends State<Malacanang> {
             ),
           ],
         ),
-      ),
-    );
+      );
+    });
   }
 }

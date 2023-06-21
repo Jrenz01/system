@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:system/home.dart';
 import 'package:system/level%203/chocolatehills.dart';
 
-void main() => runApp(Banaue());
+import '../score_provider.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider<ScoreProvider>(
+      create: (_) => ScoreProvider(),
+      child: MaterialApp(
+        home: Banaue(),
+      ),
+    ),
+  );
+}
 
 class Banaue extends StatefulWidget {
   @override
@@ -42,6 +54,8 @@ class _BanaueState extends State<Banaue> {
       }
     }
     if (isAnswerCorrect()) {
+      final scoreProvider = Provider.of<ScoreProvider>(context, listen: false);
+      scoreProvider.incrementScore();
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -64,11 +78,13 @@ class _BanaueState extends State<Banaue> {
                       height: 150,
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      '''\nBanaue, officially the Municipality of Banaue is a 4th class municipality in the province of Ifugao, Philippines. According to the 2020 census, it has a population of 20,652 people. It is widely known as the site of the UNESCO World Heritage Site, the Batad Rice Terraces and Bangaan Rice Terraces.\n\nLocation: Cordillera Administrative Region, Ifugao.\nBuild: 2,000+ years ago.''',
-                      textAlign: TextAlign.justify,
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        '''\nBanaue, officially the Municipality of Banaue is a 4th class municipality in the province of Ifugao, Philippines. According to the 2020 census, it has a population of 20,652 people. It is widely known as the site of the UNESCO World Heritage Site, the Batad Rice Terraces and Bangaan Rice Terraces.\n\nLocation: Cordillera Administrative Region, Ifugao.\nBuild: 2,000+ years ago.''',
+                        textAlign: TextAlign.justify,
+                      ),
                     ),
                   ),
                 ],
@@ -173,14 +189,13 @@ class _BanaueState extends State<Banaue> {
   }
 
   List<String> targetTexts = ['B', 'A', 'N', 'A', 'U', 'E'];
-  List<String> firstbutton = ['E', 'S', 'O', 'A', 'R'];
-  List<String> secondbutton = ['B', 'U', 'N', 'A', 'O'];
+  List<String> firstbutton = ['E', 'Y', 'O', 'A', 'C'];
+  List<String> secondbutton = ['B', 'U', 'N', 'R', 'L'];
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Level 2',
-      home: Scaffold(
+    return Consumer<ScoreProvider>(builder: (context, scoreProvider, _) {
+      return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.keyboard_arrow_left),
@@ -227,9 +242,7 @@ class _BanaueState extends State<Banaue> {
                             ],
                           ),
                           content: Text(
-                            'Its a place that boasts awe-inspiring landscapes and rich cultural heritage. '
-                            'Nestled in the mountains of the Philippines, it is known for its stunning rice terraces that cascade down the slopes.'
-                            'These terraces are a testament to the ingenuity and skill of the indigenous people who carved them out centuries ago.',
+                            'Its a place that boasts awe-inspiring landscapes and rich cultural heritage. Nestled in the mountains of the Philippines, it is known for its stunning rice terraces that cascade down the slopes. These terraces are a testament to the ingenuity and skill of the indigenous people who carved them out centuries ago.',
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                               fontSize: 15,
@@ -268,7 +281,7 @@ class _BanaueState extends State<Banaue> {
             ),
           ],
         ),
-        backgroundColor: Colors.lightBlueAccent[100],
+        backgroundColor: Colors.lightBlue[100],
         body: Column(
           children: [
             SizedBox(height: 40),
@@ -280,7 +293,26 @@ class _BanaueState extends State<Banaue> {
                 height: 230,
               ),
             ),
-            SizedBox(height: 40),
+            Positioned(
+              top: 20,
+              left: 20,
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  'Score: ${scoreProvider.score}',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
             Column(
               children: [
                 Row(
@@ -296,7 +328,7 @@ class _BanaueState extends State<Banaue> {
                           }
                         },
                         child: Container(
-                          width: 50,
+                          width: 45,
                           child: TextField(
                             controller: controllers[index],
                             enabled:
@@ -390,7 +422,7 @@ class _BanaueState extends State<Banaue> {
             ),
           ],
         ),
-      ),
-    );
+      );
+    });
   }
 }

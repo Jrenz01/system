@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:system/home.dart';
 import 'package:system/level%2018/sampaloc.dart';
 
-void main() => runApp(Manila());
+import '../score_provider.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider<ScoreProvider>(
+      create: (_) => ScoreProvider(),
+      child: MaterialApp(
+        home: Manila(),
+      ),
+    ),
+  );
+}
 
 class Manila extends StatefulWidget {
   @override
@@ -42,6 +54,8 @@ class _ManilaState extends State<Manila> {
       }
     }
     if (isAnswerCorrect()) {
+      final scoreProvider = Provider.of<ScoreProvider>(context, listen: false);
+      scoreProvider.incrementScore();
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -221,9 +235,8 @@ class _ManilaState extends State<Manila> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Level 17',
-      home: Scaffold(
+    return Consumer<ScoreProvider>(builder: (context, scoreProvider, _) {
+      return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.keyboard_arrow_left),
@@ -323,7 +336,27 @@ class _ManilaState extends State<Manila> {
                 height: 230,
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 10),
+            Positioned(
+              top: 20,
+              left: 20,
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  'Score: ${scoreProvider.score}',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
             Column(
               children: [
                 Row(
@@ -496,7 +529,7 @@ class _ManilaState extends State<Manila> {
             ),
           ],
         ),
-      ),
-    );
+      );
+    });
   }
 }

@@ -1,5 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:system/home.dart';
+
+import '../score_provider.dart';
+
+void main() {
+  runApp(
+    ChangeNotifierProvider<ScoreProvider>(
+      create: (_) => ScoreProvider(),
+      child: MaterialApp(
+        home: Burnham(),
+      ),
+    ),
+  );
+}
 
 class Burnham extends StatefulWidget {
   @override
@@ -39,6 +53,8 @@ class _BurnhamState extends State<Burnham> {
       }
     }
     if (isAnswerCorrect()) {
+      final scoreProvider = Provider.of<ScoreProvider>(context, listen: false);
+      scoreProvider.incrementScore();
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -104,7 +120,7 @@ class _BurnhamState extends State<Burnham> {
                                 ),
                                 SizedBox(height: 8.0),
                                 Text(
-                                  'You have completed all the levels!',
+                                  'You have completed all the levels!\nWith a Score of : ${scoreProvider.score}',
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.bold,
@@ -265,9 +281,8 @@ class _BurnhamState extends State<Burnham> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Level 30',
-      home: Scaffold(
+    return Consumer<ScoreProvider>(builder: (context, scoreProvider, _) {
+      return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.keyboard_arrow_left),
@@ -367,7 +382,27 @@ class _BurnhamState extends State<Burnham> {
                 height: 230,
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 10),
+            Positioned(
+              top: 20,
+              left: 20,
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.black54,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  'Score: ${scoreProvider.score}',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
             Column(
               children: [
                 Row(
@@ -540,7 +575,7 @@ class _BurnhamState extends State<Burnham> {
             ),
           ],
         ),
-      ),
-    );
+      );
+    });
   }
 }
